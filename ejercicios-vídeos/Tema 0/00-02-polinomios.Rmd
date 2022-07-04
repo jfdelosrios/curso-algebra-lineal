@@ -23,11 +23,11 @@ knitr::opts_chunk$set(echo = TRUE, comment = NA)
 
 ## Pregunta 2
 
-Hallar $\alpha$ y $\beta$ para que $x^5-\alpha x+\beta$ sea divisible por $x^2-4$
+Hallar $\alpha$ y $\beta$ para que $x^5-\alpha x+\beta$ sea divisible entre $x^2-4$, y $\alpha$ y $\beta$ no dependan de $x$.
 
 ## Pregunta 3
 
-Hallar $\alpha$ y $\beta$ para que $x^3-\alpha x^2+\beta x+3$ sea divisible por $x^2+x+1$
+Hallar $\alpha$ y $\beta$ para que $x^3-\alpha x^2+\beta x+3$ sea divisible entre $x^2+x+1$, y $\alpha$ y $\beta$ no dependan de $x$.
 
 ## Pregunta 4
 
@@ -45,10 +45,10 @@ Realizar las siguientes operaciones
 
 - $p(x)+3q(x)+r(x)$
 - $p(x)-[q(x)+5r(x)]$
-- $p(x)+q(x)*r(x)$
-- $[4p(x)+q(x)]*r(x)$
+- $p(x)+q(x) \cdot r(x)$
+- $[4p(x)+q(x)] \cdot r(x)$
 - $p(x)/q(x)-r(x)$
-- $[p(x)/r(x)]*2q(x)$
+- $[p(x)/r(x)] \cdot 2q(x)$
 
 Finalmente, en cada uno de los polinomios resultantes, evaluar en $0,-2$ y $2$
 

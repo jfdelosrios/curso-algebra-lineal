@@ -1,0 +1,15 @@
+---
+title: "Untitled"
+author: "jfdelosrios"
+date: '2022-06-24'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+diferencia entre funcion typeof y class en R

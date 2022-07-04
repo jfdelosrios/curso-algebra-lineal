@@ -1,0 +1,811 @@
+---
+title: "tarea01"
+author: "jfdelosrios"
+date: '2022-06-27'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#anclar con octave
+knitr::opts_chunk$set(engine.path = list(
+   octave = 'C:/Octave-7.1.0/mingw64/bin/octave-cli-7.1.0.exe'
+  ))
+
+#Anclar con el ambiente de python
+library(reticulate)
+use_virtualenv('../../../.env', required=TRUE)
+
+
+library(Ryacas)
+
+library(polynom)
+library(pracma)
+
+```
+
+## Pregunta 1
+¿Son los números enteros, Z, un cuerpo? ¿Por qué? Razona tu respuesta
+
+## Pregunta 2
+Realiza las siguientes sumas a mano y comprueba tu respuesta en R, Python u Octave:
+
+* $(2 + 3i) + (1 + i)$
+
+### A mano
+
+
+
+### En R
+
+$$`r ((2 + 3i) + (1 + 1i))`$$
+
+
+### En Python
+
+```{python, results='asis'}
+(2 + 3j) + (1 + 1j)
+```
+
+
+### En Octave
+
+
+* $(1 + i) + (1 - i)$
+
+### A mano
+
+
+
+### En R
+
+$$`r ((1 + 1i) + (1 - 1i))`$$
+
+
+### En Python
+
+```{python, results='asis'}
+(1 + 1j) + (1 - 1j)
+```
+
+
+### En Octave
+
+
+* $(x^2 + x + 1) + (x - 1)$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+
+x = polynomial(coef = c(1, 1, 1)) + polynomial(coef = c(-1, 1))
+
+x = toString(x)
+
+result = x
+
+#result = "(x^2 + x + 1) + (x - 1)"
+
+result = result %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+
+```
+
+$$`r result`$$
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy(r'(x^2 + x + 1) + (x - 1)')
+
+print('$$' + printing.latex(expand(simplify(p))) + '$$')
+```
+
+
+### En Octave
+
+
+
+
+## Pregunta 3
+Realiza los siguientes productos a mano y comprueba tu respuesta en R, Python u Octave:
+
+* $(2 + 3i)(1 + i)$
+
+### A mano
+
+
+
+### En R
+$$`r ((2 + 3i) * (1 + 1i))`$$
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy(r'(2 + 3I)(1 + I)')
+print('$$' + printing.latex(expand(simplify(p))) + '$$')
+```
+
+
+### En Octave
+
+
+
+
+* $(1 + i)(1 - i)$
+
+### A mano
+
+
+
+### En R
+$$`r ((1 + 1i)*(1 - 1i))`$$
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy(r'(1 + I)(1 - I)')
+print('$$' + printing.latex(expand(simplify(p))) + '$$')
+```
+
+
+### En Octave
+
+
+
+
+* $(x^2 + x + 1)(x - 1)$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+
+x = polynomial(coef = c(1, 1, 1)) * polynomial(coef = c(-1, 1))
+
+x = toString(x)
+
+result = x
+
+#result = "(x^2 + x + 1) + (x - 1)"
+
+result = result %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+
+```
+
+$$`r result`$$
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy(r'(x^2 + x + 1)(x - 1)')
+print('$$' + printing.latex(expand(simplify(p))) + '$$')
+
+```
+
+
+### En Octave
+
+
+
+
+* $(x + 1)^2$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+
+x = polynomial(coef = c(1, 1))^2
+
+x = toString(x)
+
+result = x %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+
+```
+
+$$`r result`$$
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy(r'(x + 1)^2')
+print('$$' + printing.latex(expand(simplify(p))) + '$$')
+
+```
+
+
+### En Octave
+
+
+
+
+* $(x + 1)(x - 1)$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+
+x = polynomial(coef = c(1, 1)) * polynomial(coef = c(-1, 1))
+
+x = toString(x)
+
+result = x %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+
+```
+
+$$`r result`$$
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy(r'(x + 1)(x - 1)')
+print('$$' + printing.latex(expand(simplify(p))) + '$$')
+
+```
+
+
+### En Octave
+
+
+
+
+## Pregunta 4
+Calcula el módulo de los siguientes números complejos (realizando primero las operaciones pertinentes):
+
+* $2 + 3i$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+x = "2 + 3*I"
+
+result = x %>% y_fn("Abs") %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+```
+
+$$`r result`$$
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy(r'2 + 3I')
+print('$$' + printing.latex(abs(p)) + '$$')
+```
+
+
+### En Octave
+
+
+
+
+* $i$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+x = "I"
+
+result = x %>% y_fn("Abs") %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+```
+
+$$`r result`$$
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy(r'I')
+print('$$' + printing.latex(abs(p)) + '$$')
+```
+
+
+### En Octave
+
+
+
+
+* $(2 + 3i) + (1 + i)$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+x = "(2 + 3*I) + (1 + I)"
+
+result = x %>% y_fn("Abs") %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+```
+
+$$`r result`$$
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy('(2 + 3I) + (1 + I)')
+print('$$' + printing.latex(abs(p)) + '$$')
+```
+
+
+### En Octave
+
+
+
+
+* $(1 + i) + (1 - i)$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+x = "(1 + I) + (1 - I)"
+
+result = x %>% y_fn("Abs") %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+```
+
+$$`r result`$$
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy('(1 + I) + (1 - I)')
+print('$$' + printing.latex(abs(p)) + '$$')
+```
+
+
+### En Octave
+
+
+
+
+* $(2 + 3i)(1 + i)$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+x = "(2 + 3*I)*(1 + I)"
+
+result = x %>% y_fn("Abs") %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+```
+
+$$`r result`$$
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy('(2 + 3I)(1 + I)')
+print('$$' + printing.latex(abs(p)) + '$$')
+```
+
+
+### En Octave
+
+
+
+## Pregunta 5
+Indica el grado de los siguientes polinomios (realizando primero las operaciones pertinentes):
+
+* $2x + 2 \rightarrow$ Primer grado. 
+
+* $x^5 + 3x + 2 \rightarrow$ quinto grado.
+
+* $(x^2 + x + 1)(x - 1) \rightarrow$ Tercer grado.
+
+* $(x + 1)^2 \rightarrow$ Segundo grado.
+
+* $(x + 1)(x - 1) \rightarrow$ Segundo grado.
+
+
+## Pregunta 6
+¿Son iguales los siguientes polinomios?
+
+* $(x + 1)^2$ y $x^2 + 1$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+polynomial(coef = c(1, 1))^2 == polynomial(coef = c(1, 0, 1))
+```
+
+
+### En Python
+
+```{python}
+import numpy
+
+numpy.poly1d([1, 1])**2 == numpy.poly1d([1, 0, 1])
+```
+
+
+### En Octave
+
+
+
+
+* $(x + 1)^2$ y $x^2 + 2x + 1$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+polynomial(coef = c(1, 1))^2 == polynomial(coef = c(1, 2, 1))
+```
+
+
+
+### En Python
+
+```{python}
+import numpy
+
+numpy.poly1d([1, 1])**2 == numpy.poly1d([1, 2, 1])
+```
+
+
+### En Octave
+
+
+
+
+* $(x + 1)^3$ y $x^3 + 1$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+polynomial(coef = c(1, 1))^3 == polynomial(coef = c(1, 0, 0, 1))
+```
+
+
+### En Python
+
+```{python}
+import numpy
+
+numpy.poly1d([1, 1])**3 == numpy.poly1d([1, 0, 0, 1])
+```
+
+
+### En Octave
+
+
+
+
+* $(x + 1)^3$ y $x^3 + 3x^2 + 3x + 1$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+polynomial(coef = c(1, 1))^3 == polynomial(coef = c(1, 3, 3, 1))
+```
+
+
+### En Python
+
+```{python}
+import numpy
+
+numpy.poly1d([1, 1])**3 == numpy.poly1d([1, 3, 3, 1])
+```
+
+
+### En Octave
+
+
+
+
+* $(x + 1)(x - 1)$ y $x^2 - 1$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+polynomial(coef = c(1, 1)) * polynomial(coef = c(-1, 1)) == polynomial(coef = c(1, 0, 1))
+```
+
+
+### En Python
+
+```{python}
+import numpy
+
+numpy.poly1d([1, 1]) * numpy.poly1d([1, -1]) == numpy.poly1d([1, 0, 1])
+```
+
+
+### En Octave
+
+
+
+
+* $(x - 1)^2$ y $x^2 - 2x + 1$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+polynomial(coef = c(-1, 1))^2 == polynomial(coef = c(1, -3, 1))
+```
+
+
+### En Python
+
+```{python}
+import numpy
+
+numpy.poly1d([1, -1])**2 == numpy.poly1d([1, -3, 1])
+```
+
+
+### En Octave
+
+
+
+
+
+## Pregunta 7
+Encuentra las raíces de los siguientes polinomios:
+
+* $2x + 2$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+polyroot(c(2,2))
+```
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy('2x + 2')
+
+p = list(roots(p).keys())
+
+print(p)
+
+#print('$$' + printing.latex(expand(simplify(p))) + '$$')
+```
+
+
+### En Octave
+
+
+* $x^5 + 3x + 2$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+polyroot(c(2,3,0,0,1))
+```
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy('x^5 + 3x + 2')
+
+p=list(roots(p).keys())
+
+print(p)
+
+#print('$$' + printing.latex(expand(simplify(p))) + '$$')
+```
+
+
+### En Octave
+
+
+
+
+* $(x^2 + x + 1)(x - 1)$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+p1 = polynomial(coef = c(1, 1, 1)) * polynomial(coef = c(-1, 1))
+
+polyroot(coef(p1))
+```
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy('(x^2 + x + 1)(x - 1)')
+
+p=list(roots(p).keys())
+
+print(p)
+
+#print('$$' + printing.latex(expand(simplify(p))) + '$$')
+```
+
+
+### En Octave
+
+
+
+
+* $(x + 1)^2$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+p1 = polynomial(coef = c(1, 1, 1))^2
+
+polyroot(coef(p1))
+```
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy('(x + 1)^2')
+
+p=list(roots(p).keys())
+
+print(p)
+
+#print('$$' + printing.latex(expand(simplify(p))) + '$$')
+```
+
+
+### En Octave
+
+
+
+
+* $(x + 1)(x - 1)$
+
+### A mano
+
+
+
+### En R
+
+```{r}
+p1 = polynomial(coef = c(1, 1)) * polynomial(coef = c(-1, 1))
+
+polyroot(coef(p1))
+```
+
+
+### En Python
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy('(x + 1)(x - 1)')
+
+p=list(roots(p).keys())
+
+print(p)
+
+#print('$$' + printing.latex(expand(simplify(p))) + '$$')
+```
+
+
+### En Octave
+

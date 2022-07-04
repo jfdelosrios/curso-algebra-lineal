@@ -36,7 +36,7 @@ y como $0$ es el elemento neutro para la suma, de nuevo por definición obtenemo
 
 En este caso queremos ver dos cosas: por un lado, que el neutro para la suma, 0, es único; y, por otro, que el neutro para el producto también es único.
 
-Empecemos por la unicidad de 0. Para ello, supongamos que existen dos números $0,\tilde{0}\mathbb{K}$, $0\ne\tilde{0}$ para los cuales se cumplen:
+Empecemos por la unicidad de 0. Para ello, supongamos que existen dos números $0,\tilde{0}\in\mathbb{K}$, $0\ne\tilde{0}$ para los cuales se cumplen:
 
 $$a+0 = 0+a = a\quad \forall a\in\mathbb{K}$$
 $$a+\tilde{0} = \tilde{0}+a = a\quad \forall a\in\mathbb{K}$$
@@ -45,7 +45,7 @@ Con lo cual, tenemos las igualdades $$a+0 = a = a+\tilde{0}$$ y, por tanto $$a +
 
 Obtenemos así una contradicción que viene de suponer que existían dos elementos neutros diferentes para la suma. Así pues, acabamos de demostrar que el neutro para la suma es único.
 
-Pasemos ahora a ver lo mismo para el neutro del producto. De nuevo, supongamos que existen dos números $1,\tilde{1}\mathbb{K}$, $1\ne\tilde{1}$ para los cuales se cumplen las definiciones de elemento neutro.
+Pasemos ahora a ver lo mismo para el neutro del producto. De nuevo, supongamos que existen dos números $1,\tilde{1}\in\mathbb{K}$, $1\ne\tilde{1}$ para los cuales se cumplen las definiciones de elemento neutro.
 
 Por un lado, como $1$ es elemento neutro para el producto, $$1\cdot \tilde{1} = \tilde{1}$$
 
@@ -83,6 +83,8 @@ Aplicando ahora que $a_1^{-1}$ es inverso de $a$, se cumple que
 $$a_2^{-1}=(a_1^{-1}a)a_2^{-1} =a_1^{-1}\cdot1 = a_1^{-1}$$
 
 Y con esto llegamos a contradicción. Así pues, existe un único elemento inverso para cada elemento no nulo de $\mathbb{K}$
+
+\newpage
 
 **Demostración 5**
 

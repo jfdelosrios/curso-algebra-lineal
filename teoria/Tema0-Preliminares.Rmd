@@ -11,13 +11,13 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = NA, engine.path = list(
-  octave = '/Applications/Octave-4.4.1.app/Contents/Resources/usr/bin/octave'
+  octave = 'C:/Octave-7.1.0/mingw64/bin/octave-cli-7.1.0.exe'
 ))
 library(polynom)
 library(pracma)
 library(knitr)
 library(reticulate)
-use_python("/anaconda3/bin/python3")
+use_virtualenv('../.env', required=TRUE)
 ```
 
 # Cuerpos
@@ -80,7 +80,7 @@ Algunos de los cuerpos más conocidos son:
 Los números naturales, $\mathbb{N}:=\{0,1,2,...\}$, no son un cuerpo. No hay elementos opuestos para ningún elemento del conjunto.
 </div>
 
-## El cuerpo $\mathbb{Z}_2$
+## El cuerpo $\mathbb{Z}_2$ (un ejemplar de un cuerpo finito)
 
 Entremos un poquito más en detalle en este cuerpo tan interesante:
 
@@ -121,11 +121,11 @@ $$z=(a,b)=(a,0)+(0,b)=(a,0)+(b,0)\cdot(0,1)=a+bi$$
 
 <l class = "definition">Parte Imaginaria.</l> Si $z=a+bi$, Im$(z)=b$
 
-<l class = "definition">Conjugado de z.</l> Si $z=a+bi$, $\bar{z}=a-bi$
+<l class = "definition">Conjugado de z.</l> Si $z=a+bi$, entonces $\bar{z}=a-bi$
 
 <l class = "definition">Módulo.</l> $|z|=\sqrt{z\cdot\bar{z}}$
 
-<l class = "definition">Argumento.</l> Si $z=a+bi$,  $\text{arg}(z)=\arctan\left(\frac{b}{a}\right)$. Se da en radianes.
+<l class = "definition">Argumento.</l> Si $z=a+bi$, entonces  $\text{arg}(z)=\arctan\left(\frac{b}{a}\right)$. Se da en radianes.
 
 <l class = "definition">Argumento principal.</l> $\text{Arg}(z)\in(-\pi,\pi]$
 

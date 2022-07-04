@@ -1,0 +1,287 @@
+---
+title: "Ejercicios"
+subtitle: "Números Complejos"
+author: "Curso Álgebra Lineal"
+output: pdf_document
+---
+
+```{r setup, include=TRUE, eval = TRUE}
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
+
+#anclar con octave
+knitr::opts_chunk$set(engine.path = list(
+   octave = 'C:/Octave-7.1.0/mingw64/bin/octave-cli-7.1.0.exe'
+  ))
+
+#Anclar con el ambiente de python
+library(reticulate)
+use_virtualenv('../../.env', required=TRUE)
+  
+```
+
+\newpage
+
+## Pregunta 1
+
+Resolved la ecuación $1+z+z^2=0$ para $z=(x,y)$ escribiendo $$(1,0)+(x,y)+(x,y)(x,y) = (0,0)$$
+
+
+### Resolución a mano.
+
+Se aplica la ecuación para la resolución de polinomios cuadraticos.
+
+$$z = \frac{-1 \pm \sqrt{ 1 -4 } } {2} = \frac{-1}{2} \pm \frac{\sqrt{-3}}{2} = \frac{-1}{2} \pm \frac{\sqrt{3}}{2} i $$
+
+Por consiguiente 
+
+$$x = \frac{-1}{2} $$
+
+$$y = \pm \frac{\sqrt{3}}{2} $$
+
+
+
+```{r}
+a = 1
+
+b = 1
+
+d = 1
+
+```
+
+
+### Resolución en lenguaje `R`.
+
+```{r}
+raiz = polyroot(c(a,b,d))
+
+x = Re(raiz)
+y = Im(raiz)
+
+print(x)
+
+print(y)
+
+```
+
+\newpage
+
+### Resolución en lenguaje `Python`.
+
+```{python}
+import numpy as np 
+
+coeff = [1, 1, 1] 
+raiz = np.roots(coeff)
+
+x = raiz.real
+y = raiz.imag
+
+print(x)
+
+print(y)
+```
+
+
+### Resolución en lenguaje `Octave`.
+
+
+```{octave}
+c = [1, 1, 1];
+raiz = roots(c)
+
+x = real(raiz)
+
+y = imag(raiz)
+```
+
+
+\newpage
+
+## Pregunta 2
+
+Calcular el valor del argumento principal $\text{Arg}(z)$ en los siguientes casos
+
+- $z = 2+2i$
+
+
+### Resolución en lenguaje `R`.
+
+```{r}
+z = 2 + 2i
+
+print(Arg(z))
+
+```
+
+
+### Resolución en lenguaje `Python`.
+
+```{python}
+import cmath
+
+z = 2 + 2j
+
+print(cmath.phase(z))
+```
+
+
+### Resolución en lenguaje `Octave`.
+
+```{octave}
+z = 2 + 2i
+
+arg(z)
+```
+
+- $z = (\sqrt{3}+i)^6$
+
+
+### Resolución en lenguaje `R`.
+
+```{r}
+z = (sqrt(3) + 1i) ^ 6
+
+print(Arg(z))
+```
+
+
+### Resolución en lenguaje `Python`.
+
+```{python}
+import cmath
+import math
+
+z = (math.sqrt(3) + 1j) ** 6
+
+print(cmath.phase(z))
+```
+
+
+### Resolución en lenguaje `Octave`.
+
+```{octave}
+z = (sqrt(3) + 1j) ^ 6
+
+arg(z)
+```
+
+
+- $z = \frac{1+3i}{2}$
+
+
+### Resolución en lenguaje `R`.
+
+```{r}
+z = (1 + 3i) / 2
+
+print(Arg(z))
+
+```
+
+
+### Resolución en lenguaje `Python`.
+
+```{python}
+import cmath
+
+z = (1 + 3j) / 2
+
+print(cmath.phase(z))
+```
+
+
+### Resolución en lenguaje `Octave`.
+
+```{octave}
+z = (1 + 3i) / 2
+
+arg(z)
+```
+
+- $z = -\frac{2}{1+\sqrt{3}i}$
+
+
+### Resolución en lenguaje `R`.
+
+```{r}
+z = -2 / complex(real = 1, imaginary  = sqrt(3))
+
+print(Arg(z))
+
+```
+
+\newpage
+
+### Resolución en lenguaje `Python`.
+
+```{python}
+import cmath
+import math
+
+z = -2 / complex(real = 1, imag  = math.sqrt(3))
+
+print(cmath.phase(z))
+```
+
+
+### Resolución en lenguaje `Octave`.
+
+```{octave}
+z = -2 / complex(real = 1, imag  = sqrt(3))
+
+arg(z)
+```
+
+
+\newpage
+
+## Pregunta 3
+
+https://community.rstudio.com/t/using-sympy-in-rmarkdown/99514/4
+
+Expresando los factores individuales de la izquierda en forma polar, efectuar las operaciones requeridas y finalmente, cambiar a coordenadas rectangulares (forma binómica) para obtener el miembro de la derecha y probar así las siguientes igualdades:
+
+- $i(1-\sqrt{3}i)(\sqrt{3}+i) = 2(1+\sqrt{3}i)$
+
+
+```{r}
+z0 = complex(real = 0, imaginary = 1)
+z1 = complex(real = 1, imaginary = -sqrt(3))
+z2 = complex(real = sqrt(3), imaginary = 1)
+
+argumentoTotal = Arg(z2) + Arg(z0) + Arg(z1)
+```
+
+
+$$i(1-\sqrt{3}i)(\sqrt{3}+i) = `r Mod(z0)` e ^ {`r round(Arg(z0), 2)`i} \cdot   `r Mod(z1)` e ^ {`r round(Arg(z1), 2)`i} \cdot `r Mod(z2)` e ^ {`r round(Arg(z2), 2)`i} = 4e^{`r round(argumentoTotal, 2)`i} = 4 (cos(`r round(argumentoTotal, 2)`) + sen(`r round(argumentoTotal, 2)`)i) = 2 (2 cos(`r round(argumentoTotal, 2)`) + 2 sen(`r round(argumentoTotal, 2)`)i)$$
+
+$$ = 2 (`r round(2 * cos(argumentoTotal), 2)` + `r round(2 * sin(argumentoTotal), 2)`i)$$ 
+$$\sqrt{3} = `r round(sqrt(3), 2)`$$
+
+Por consiguiente $i(1-\sqrt{3}i)(\sqrt{3}+i) = 2(1+\sqrt{3}i)$ es verdadero.
+
+- $(-1+i)^7 = -8(1+i)$
+
+```{r}
+z0 = complex(real = -1, imaginary = 1)
+```
+
+
+$$(-1+i)^7 = (`r round(Mod(z0), 2)` e ^ {`r round(Arg(z0), 2)`i})^7 = (`r round(Mod(z0)^7, 2)` e ^ {`r round(Arg(z0) * 7, 2)`i}) = `r round(Mod(z0)^7, 2)` cos(`r round(Arg(z0) * 7, 2)`) +  `r round(Mod(z0)^7, 2)` sin(`r round(Arg(z0) * 7, 2)`)i = `r round(Mod(z0) ^ 7 * cos(Arg(z0) * 7), 2)` `r round(Mod(z0) ^ 7 * sin(Arg(z0) * 7), 2)`i = -8(1+i)$$
+
+
+
+- $(1+\sqrt{3}i)^{-10} = 2^{-11}(-1+\sqrt{3}i)$
+
+```{r}
+z0 = complex(real = 1, imaginary = sqrt(3))
+```
+
+
+$$(1+\sqrt{3}i)^{-10} = (`r round(Mod(z0), 2)` e ^ {`r round(Arg(z0), 2)`i})^{-10} = `r round(Mod(z0), 2)` ^{-10} \cdot e ^ {`r round(Arg(z0) * (-10), 2)`i} = `r round(Mod(z0), 2)` ^{-10}( cos(`r round(Arg(z0) * (-10), 2)`) + sen(`r round(Arg(z0) * (-10), 2)`)i) = `r round(Mod(z0), 2)` ^{-10}(`r round(cos(Arg(z0) * (-10)), 2)` + `r round(sin(Arg(z0) * (-10)), 2)` i)$$
+
+$$2^{-11}(-1+\sqrt{3}i) = 2^{-10} \left( {\frac{-1}{2} + \frac{\sqrt{3}}{2} i}\right) = 2^{-10} \left( {`r -1/2` + `r round(sqrt(3)/2, 2)`i}\right)$$
+
+Por consiguiente $(1+\sqrt{3}i)^{-10} = 2^{-11}(-1+\sqrt{3}i)$ es verdadero
+

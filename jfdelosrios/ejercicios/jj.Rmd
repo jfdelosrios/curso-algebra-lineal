@@ -1,0 +1,62 @@
+---
+title: "Untitled"
+author: "jfdelosrios"
+date: '2022-06-25'
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=TRUE, eval = TRUE}
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
+
+#anclar con octave
+knitr::opts_chunk$set(engine.path = list(
+   octave = 'C:/Octave-7.1.0/mingw64/bin/octave-cli-7.1.0.exe'
+  ))
+
+#Anclar con el ambiente de python
+library(reticulate)
+use_virtualenv('../../.env', required=TRUE)
+```
+
+```{r}
+source_python("hh.py")
+yy = prueba()
+
+```
+
+
+
+`r yy`
+
+------------------
+
+```{python, results='asis'}
+
+import sympy
+
+x = sympy.Symbol('x')
+polynomial = (2 * x + 3)**4
+output = polynomial.expand()
+xx = '$' + sympy.printing.latex(output) + '$'
+
+print(xx)
+```
+
+
+
+-------------------------
+
+
+```{python, results='asis'}
+from sympy import *
+from latex2sympy2 import latex2sympy
+
+p = latex2sympy(r'x^4-6x+1')
+q = latex2sympy(r'3x^3-5x')
+r = latex2sympy(r'x^4-x^2+2')
+
+print('$' + printing.latex(simplify(p + 3 * q + r)) + '$')
+```
