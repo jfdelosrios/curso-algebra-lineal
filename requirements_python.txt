@@ -1,0 +1,4 @@
+numpy
+sympy
+latex2sympy2
+jupyter

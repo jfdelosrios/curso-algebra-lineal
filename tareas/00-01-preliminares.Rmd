@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Pregunta 1
-¿Son los números enteros, Z, un cuerpo? ¿Por qué? Razona tu respuesta
+¿Son los números enteros, $\mathbb Z$, un cuerpo? ¿Por qué? Razona tu respuesta
 
 ## Pregunta 2
 Realiza las siguientes sumas a mano y comprueba tu respuesta en R, Python u Octave:

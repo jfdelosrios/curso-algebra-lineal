@@ -1,5 +1,5 @@
 {
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.windows": "PowerShell_pa_ambiente",
   "python.defaultInterpreterPath": ".env\\Scripts\\python.exe",
   "python.terminal.activateEnvironment": true,
   "terminal.integrated.profiles.windows": {

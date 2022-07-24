@@ -1,0 +1,4 @@
+reticulate,
+polynom,
+Ryacas,
+pracma

@@ -1,0 +1,24 @@
+---
+title: "ejerciciosMatrices"
+author: "jfdelosrios"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Ejercicio 12
+
+```{r}
+A = rbind(c(0, 1),c(0, 2))
+B = rbind(c(1, 1),c(3, 4))
+C = rbind(c(2, 5),c(3, 4))
+
+A %*% B
+
+A %*% C
+```
+
+
