@@ -1,0 +1,78 @@
+---
+title: "Tarea"
+subtitle: "Vectores"
+author: "Curso Álgebra Lineal"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Pregunta 1
+Encontrar un vector equivalente a $\overrightarrow{AB}$ donde $A = (1, 2)$ y $B = (0, 3)$
+
+# Pregunta 2
+Encontrar un vector equivalente a $\overrightarrow{AB}$ con $A = (3, 5)$ y $B = (6, -2)$ tal que su origen esté en el punto $C = (-1, 0)$
+
+# Pregunta 3
+Encontrar el módulo, dirección y sentido del vector de componentes $(7, -5)$
+
+# Pregunta 4
+Dado el vector de módulo 8 y el hecho de que forma un ángulo de 135$^{\circ}$ con el eje $OX$, calculad sus componentes
+
+# Pregunta 5
+Dados los puntos $A = (1, 2, 3)$, $B = (0, -1, 2)$ y $C = (-2, -7, 0)$, si $D = (-1, x, 0)$ encontrad, si es posible, el valor de $x$ para que los vectores $\overrightarrow{AB}$ y $\overrightarrow{CD}$ sean paralelos.
+
+# Pregunta 6
+Dados los vectores $u = (2, 3, 0)$ y $v = (-3, 0, 1)$, encontrad el valor de $k$ para que los vectores $w$, $z$ sean paralelos donde $w = 2u - v$ y $z = -3u + kv$
+
+# Pregunta 7
+¿Es el vector $(1, 2, 3)$ combinación lineal de los vectores $(2, 3, 0)$ y $(-5, 0, 2)$?
+
+# Pregunta 8
+Dados los vectores $u = (2, 1, 0)$, $v = (-3, 4, 1)$ y $w = (1, 0, -5)$
+
+* Comprobad que el producto escalar cumple la propiedad conmutativa
+
+* Comprobad que el producto escalar cumple la propiedad distributiva
+
+* Comprobad que el producto escalar cumple la propiedad asociativa entre escalares y vectores
+
+# Pregunta 9
+Demostrad que si $u \neq 0$, entonces $(u, u) > 0$, donde $u = (u1, . . . , un)$
+
+# Pregunta 10
+Dado $u = (1, 2, -1)$,
+
+* Calculad su norma
+
+* Comprobad que $||2u|| = 2||u||$
+
+* Comprobad que $||(-3)u|| = | - 3| \cdot ||u|| = 3||u||$
+
+* Comprobad que si se divide por su norma se obtiene otro vector que es unitario
+
+* Encuentra otro vector de la misma dirección y sentido, pero con norma 3
+
+# Pregunta 11
+Demostrad que cualquier vector $u$, al ser dividido por su norma, es unitario.
+
+# Pregunta 12
+Dados los puntos $A = (1, 2, 3)$, $B = (0, -1, 2)$ y $C = (-2, -7, 0)$
+
+* Calcula la distancia entre $A$ y $B$
+
+* Calcula la distancia entre $A$ y $C$
+
+* Calcula la distancia entre $B$ y $C$
+
+# Pregunta 13
+Dados los puntos $A = (1, 2, 3)$, $B = (0, -1, 2)$ y $C = (-2, -7, 0)$,
+
+* Encuentra el ángulo que forman los vectores $\overrightarrow{AB}$ y $\overrightarrow{AC}$
+
+* Calcula el producto vectorial de los vectores $\overrightarrow{CB}$ y $\overrightarrow{AC}$
+
+# Pregunta 14
+¿Para qué valores de a son ortogonales los vectores $(a, -a - 8, a, a)$ y $(a, 1, -2, 0)$?

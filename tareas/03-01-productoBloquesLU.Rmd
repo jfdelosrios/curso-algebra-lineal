@@ -1,0 +1,93 @@
+---
+title: "Tarea"
+subtitle: "Producto por bloques y factorizaciones triangulares"
+author: "Curso Álgebra Lineal"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Pregunta 1
+Calcula la factorización $A = LU$ o $P A = LU$ de las siguientes matrices
+
+$$
+A_1 =
+\begin{pmatrix}
+1 & 4 & 6 \\
+2 & -1 & 3 \\
+3 & 2 & 5
+\end{pmatrix}
+$$
+
+$$
+A_2 =
+\begin{pmatrix}
+2 & 4 & 2 \\
+1 & 3 & 1 \\
+7 & 5 & 6
+\end{pmatrix}
+$$
+
+$$
+A_3 =
+\begin{pmatrix}
+0 & 0 & 5 \\
+-1 & 4 & 1 \\
+2 & -3 & 2
+\end{pmatrix}
+$$
+
+$$
+A_4 =
+\begin{pmatrix}
+3 & 9 & -2 \\
+6 & -3 & 8 \\
+4 & 6 & 5
+\end{pmatrix}
+$$
+
+# Pregunta 2
+Utiliza las factorizaciones de la pregunta anterior para resolver los sistemas $A_iX = B_i$ donde las $A_i$ son las del ejercicio anterior y las $B_i$ correspondientes son las mostradas a continuación
+
+$$
+B_1 =
+\begin{pmatrix}
+-1 \\
+7 \\
+2 \\
+\end{pmatrix}
+\qquad B_2 =
+\begin{pmatrix}
+6 \\
+1 \\
+1
+\end{pmatrix}
+\qquad B_3 =
+\begin{pmatrix}
+3 \\
+10 \\
+4
+\end{pmatrix}
+\qquad B_4 =
+\begin{pmatrix}
+-1 \\
+0 \\
+2
+\end{pmatrix}
+$$
+
+# Pregunta 3
+
+Calcular la inversa de la matriz por bloques
+
+$$
+A =
+\begin{pmatrix}
+1 & 1 & | & -2 \\
+1 & 2 & | & -1 \\
+- & - & | & - \\
+0 & 0 & | & 2
+\end{pmatrix}
+$$

@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Pregunta 1
 
-Dada la matriz $A \in M_5(\mathbb{K})$
+Dada la matriz $A \in \mathcal{M}_5(\mathbb{K})$
 
 $$
 A = \begin{pmatrix}
@@ -81,7 +81,7 @@ $$a_{11}, a_{23}, a_{15}, a_{21}, a_{32}, a_{44}, a_{53}$$
 
 ## Pregunta 3
 
-Dada $A \in M_n(\mathbb{K})$ relaciona correctamente:
+Dada $A \in \mathcal{M}_n(\mathbb{K})$ relaciona correctamente:
 
 * $A_{i,j}: i < j$ \textcolor{gray}{está por encima de la diagonal principal}
 
@@ -104,15 +104,15 @@ Con lo cual definiremos las entradas de la matriz en la diagonal principal, por 
 
 Definimos el conjunto de las matrices diagonales como:
 
-\begin{center}$\{A \in M_n(\mathbb{K}) : \forall i, j \in \{1, ... , n\}$, si $i \neq j$, entonces $A_{ij} = 0\}$\end{center}
+\begin{center}$\{A \in \mathcal{M}_n(\mathbb{K}) : \forall i, j \in \{1, ... , n\}$, si $i \neq j$, entonces $A_{ij} = 0\}$\end{center}
 
 Define formalmente los conjuntos de matrices triangulares inferiores $(L_n(\mathbb{K}))$ y superiores $(U_n(\mathbb{K}))$
 
 \begin{center}
 
-$L_n(\mathbb{K}) := \{A \in M_n(\mathbb{K}) : \forall i, j \in \{1, ... , n\}$, si $i$ $\color{gray} >$ $j$, entonces $A_{ij} = 0\}$
+$L_n(\mathbb{K}) := \{A \in \mathcal{M}_n(\mathbb{K}) : \forall i, j \in \{1, ... , n\}$, si $i$ $\color{gray} >$ $j$, entonces $A_{ij} = 0\}$
 
-$U_n(\mathbb{K}) :=$ $\color{gray} \{A \in M_n(\mathbb{K}) : \forall i, j \in \{1, ... , n\}$\textcolor{gray}{, si }$\color{gray} i < j$\textcolor{gray}{, entonces }$\color{gray} A_{ij} = 0\}$
+$U_n(\mathbb{K}) :=$ $\color{gray} \{A \in \mathcal{M}_n(\mathbb{K}) : \forall i, j \in \{1, ... , n\}$\textcolor{gray}{, si }$\color{gray} i < j$\textcolor{gray}{, entonces }$\color{gray} A_{ij} = 0\}$
 
 \end{center}
 
@@ -493,7 +493,7 @@ Ahora vamos a generalizar el ejemplo anterior a orden $n$.
 
 Para ello empecemos formalizando el producto de matrices
 
-Si $A, B \in M_{15}(\mathbb{K})$, entonces
+Si $A, B \in \mathcal{M}_{15}(\mathbb{K})$, entonces
 
 $$
 AB_{12,3} = 
@@ -501,7 +501,7 @@ a_{12,1}b_{1,3} + a_{12,2}b_{2,3} + \cdot \cdot \cdot + a_{12,15}b_{15,3} =
 \sum_{k=1}^{15} a_{12,k}b_{k,3}
 $$
 
-Si $A, B \in M_8(\mathbb{K})$, entonces
+Si $A, B \in \mathcal{M}_8(\mathbb{K})$, entonces
 
 $$
 AB_{85} =
@@ -511,7 +511,7 @@ $$
 
 \newpage
 
-Si $A, B \in M_9(\mathbb{K})$, entonces
+Si $A, B \in \mathcal{M}_9(\mathbb{K})$, entonces
 
 $$
 AB_{36} =
