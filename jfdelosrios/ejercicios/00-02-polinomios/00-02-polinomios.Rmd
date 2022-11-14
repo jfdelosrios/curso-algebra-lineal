@@ -11,176 +11,307 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = NA)
 
-#Anclar con el ambiente de python
+#Anclar con el ambiente de Python
 library(reticulate)
 use_virtualenv('../../../.env', required=TRUE)
-
 
 library(Ryacas)
 ```
 
+Resolver a mano
+
 ## Pregunta 1
 
-¿Son las siguientes expresiones algebraicas polinomios en $\mathbb{R}[x]$? En caso afirmativo, ¿qué grado tienen?
+**¿Son las siguientes expresiones algebraicas polinomios en 
+\mbox{\boldmath$\mathbb{R}[x]$}? En caso afirmativo, ¿qué grado tienen?**
 
-- $1+x+x^2+x^3+x^4+\cdots+x^n$ Es un polinomio de grado $n$.
-- $1+\frac{1}{x}+x^2+\frac{1}{x^3}$ no es un polinomio ya que algunos términos tienen exponente negativo.
-- $1-x^{-2}$ no es un polinomio ya que algunos términos tienen exponente negativo.
-- $\sqrt{x}+3$ no es un polinomio ya que algunos términos no tienen como exponente un natural.
-- $x+x^2i$
-- $(x+1)^2$ representa un polinomio de grado 2.
-- $x+x^5+x^{10001}$ es un polinomio de grado 10001.
+- \mbox{\boldmath $1+x+x^2+x^3+x^4+\cdots+x^n$ } Es un polinomio de grado $n$.
+- \mbox{\boldmath $1+\frac{1}{x}+x^2+\frac{1}{x^3}$ } no es un polinomio ya que 
+  algunos términos tienen exponente negativo.
+- \mbox{\boldmath $1-x^{-2}$ } no es un polinomio ya que algunos términos tienen 
+  exponente negativo.
+- \mbox{\boldmath $\sqrt{x}+3$ } no es un polinomio ya que algunos términos no 
+  tienen como exponente un natural.
+- \mbox{\boldmath $x+x^2i$ }
+- \mbox{\boldmath $(x+1)^2$ } representa un polinomio de grado 2.
+- \mbox{\boldmath $x+x^5+x^{10001}$ } es un polinomio de grado 10001.
+
+\newpage
 
 ## Pregunta 2
 
-Hallar $\alpha$ y $\beta$ para que $x^5-\alpha x+\beta$ sea divisible entre $x^2-4$.
+**\mbox{\boldmath Hallar $\alpha$ y $\beta$ para que $x^5-\alpha x+\beta$ sea 
+divisible entre $x^2-4$, $\forall x$.}**
 
-![unchanged image](respuesta2.jpg)
+```{python, results='asis'}
+from funciones import encontrar
 
-$-\alpha x + \beta = -16x + k(x^2-4)^{z}$ donde $k \in \mathbb{N}$ y $z \in \mathbb{N} - \lbrace 0 \rbrace$
+encontrar(
+    _dividendo = r'x^5 - \alpha x + \beta',
+    _divisor = r'x^2-4',
+    _variables = ['alpha', 'beta']
+)
+```
+
+
+### Comprobando
+
+
+```{python, results='asis'}
+
+from funciones import comprobar2a4
+
+comprobar2a4(
+        _dividendo = r'x^5 - \alpha x + \beta', 
+        _divisor = r'x^2-4', 
+        variables = {'alpha': 16, 'beta': 0}
+    )
+    
+```
+
 
 \newpage
 
 ## Pregunta 3
 
-Hallar $\alpha$ y $\beta$ para que $x^3-\alpha x^2+\beta x+3$ sea divisible entre $x^2+x+1$
+**\mbox{\boldmath Hallar $\alpha$ y $\beta$ para que $x^3-\alpha x^2+\beta x+3$ 
+sea divisible entre $x^2+x+1$, $\forall x$.}**
 
-![unchanged image](respuesta3.jpg)
-$-\alpha x^2 + \beta x + 4 - k(x^2-4)^{z} = 0$ donde $k \in \mathbb{N}$ y $z \in \mathbb{N} - \lbrace 0 \rbrace$
+```{python, results='asis'}
+from funciones import encontrar
+
+encontrar(
+    _dividendo = r'x^3-\alpha x^2+\beta x+3',
+    _divisor = r'x^2+x+1',
+    _variables = ['alpha', 'beta']
+)
+```
+
+
+### Comprobando
+
+```{python, results='asis'}
+
+from funciones import comprobar2a4
+
+comprobar2a4(
+        _dividendo = r'x^3 -\alpha x^2+\beta x+3', 
+        _divisor = r'x^2+x+1', 
+        variables = {'alpha': -4, 'beta': 4}
+    )
+    
+```
 
 \newpage
 
 ## Pregunta 4
 
-Encontrar el valor de $\alpha$ para que al dividir $2x^3-2x^2-\alpha x+4$ entre $x-2$ dé resto 2
+**\mbox{\boldmath Encontrar el valor de $\alpha$ para que al dividir 
+$2x^3-2x^2-\alpha x+4$ entre $x-2$ dé resto 2, $\forall x$.}**
 
-![unchanged image](respuesta4.jpg)
-$-\alpha x + 12 - k(x - 2)^{z} = 2$ donde $k \in \mathbb{N}$ y $z \in \mathbb{N} - \lbrace 0 \rbrace$
+```{python, results='asis'}
+from funciones import encontrar
 
-$$-\alpha x + 12 - k(x - 2)^{z} = 2$$
-$$\alpha = \frac{2 - 12 + k(x - 2)^{z})}{x} = \frac{-10 + k(x - 2)^{z}}{x}$$
+encontrar(
+    _dividendo = r'(2x^3 - 2x^2 - \alpha x + 4) - 2',
+    _divisor = r'x-2',
+    _variables = ['alpha']
+)
+```
+
+
+### Comprobando
+
+```{python, results='asis'}
+
+from funciones import comprobar2a4
+
+comprobar2a4(
+        _dividendo = r'2x^3 - 2x^2 -\alpha x + 4', 
+        _divisor = r'x - 2', 
+        variables = {'alpha': 5}
+    )
+    
+```
+
+
+\newpage
 
 ## Pregunta 5
 
-Determinar el valor de $\alpha$ para que $2x^3-2x^2-\alpha x+4$ admita $x = 2$ como una de sus raíces
+**\mbox{\boldmath Determinar el valor de $\alpha$ para que 
+$2 x^3 - 2 x^2 - \alpha x + 4$ admita $x = 2$ como una de sus raíces.}**
 
-Para que admita $x = 2$ como una raíz $2x^3-2x^2-\alpha x+4$ debe de ser divisible entre $x-2$. Haciendo el mismo ejercicio 4 pero igualando a $0$.
+```{python, results='asis'}
 
-$-\alpha x + 12 - k(x - 2)^{z} = 0$ donde $k \in \mathbb{N}$ y $z \in \mathbb{N} - \lbrace 0 \rbrace$
+from latex2sympy2 import latex2sympy
+from sympy import solve
+from sympy.abc import alpha, x
+from sympy.printing import latex
 
-$$\alpha = \frac{0 - 12 + k(x - 2)^{z})}{x} = \frac{-12 + k(x - 2)^{z}}{x}$$
+p = latex2sympy(r'2x^3 -2x^2 - \alpha x + 4')
+
+for i in solve(p.subs([(x, 2)]), alpha):
+  
+  print(
+    'Cuando $' + latex(alpha) + ' = ' + str(i) +'$ y $x = 2$' +   
+    r' entonces $' + latex(p) + ' = ' + latex(p.subs([(x, 2), (alpha, i)])) +'$'
+    )
+  
+```
+
+\newpage
 
 ## Pregunta 6
 
-Dados los polinomios $$p(x) = x^4-6x+1\qquad q(x) = 3x^3-5x\qquad r(x) = x^4-x^2+2$$
+**Dados los polinomios**
 
-```{r}
-p = "x ^ 4 - 6 * x + 1"
-q = '3 * x ^ 3 - 5 * x'
-r = 'x ^ 4 - x ^ 2 + 2'
+\begin{gather*}
+\mbox{\boldmath  $p(x) = x^4-6x+1$ \qquad $q(x) = 3x^3-5x$ \qquad $r(x) = x^4-x^2+2$  }
+\end{gather*}
+
+**Realizar las siguientes operaciones y en cada uno de los polinomios 
+resultantes, evaluar en \mbox{\boldmath $0$, $-2$ y $2$ }.**
+
+- \mbox{\boldmath $p(x)+3q(x)+r(x)$ }
+
+
+```{python, results='asis'}
+from funciones import punto6
+
+punto6(
+  p = r'x^4-6x+1', 
+  q = r'3x^3-5x', 
+  r = r'x^4-x^2+2', 
+  operacion = r'p + 3q + r', 
+  lis = [0, -2, 2]
+  )
 ```
 
 
-Realizar las siguientes operaciones
+- \mbox{\boldmath $p(x)-[q(x)+5r(x)]$ }
 
-- $p(x)+3q(x)+r(x)$
 
-```{r}
-result = paste(p, '+3*(', q, ')+', r)
+```{python, results='asis'}
+from funciones import punto6
 
-x = result %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+punto6(
+  p = r'x^4-6x+1', 
+  q = r'3x^3-5x', 
+  r = r'x^4-x^2+2', 
+  operacion = r'p-[q+5r]', 
+  lis = [0, -2, 2]
+  )
 ```
 
-$$p(x)+3q(x)+r(x) = `r x`$$
 
-- $p(x)-[q(x)+5r(x)]$
+\newpage
 
-```{r}
-result = paste('(', p, ') - ((', q, ') + 5 * (', r,'))')
+- \mbox{\boldmath $p(x)+q(x) \cdot r(x)$ }
 
-x = result %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+```{python, results='asis'}
+from funciones import punto6
+
+punto6(
+  p = r'x^4-6x+1', 
+  q = r'3x^3-5x', 
+  r = r'x^4-x^2+2', 
+  operacion = r'p+qr', 
+  lis = [0, -2, 2]
+  )
 ```
 
-$$p(x)-[q(x)+5r(x)] = `r x`$$
 
-- $p(x)+q(x)*r(x)$
+- \mbox{\boldmath $[4p(x)+q(x)] \cdot r(x)$ }
 
-```{r}
-result = paste('(', p, ') + (', q, ') * (', r,')')
+```{python, results='asis'}
+from funciones import punto6
 
-x = result %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+punto6(
+  p = r'x^4-6x+1', 
+  q = r'3x^3-5x', 
+  r = r'x^4-x^2+2', 
+  operacion = r'[4p+q]*r', 
+  lis = [0, -2, 2]
+  )
 ```
 
-$$p(x) + q(x) * r(x) = `r x`$$
+\newpage
 
-- $[4p(x)+q(x)]*r(x)$
+- \mbox{\boldmath $\frac{p(x)}{q(x)}-r(x)$ }
 
-```{r}
-result = paste('(4 * (', p, ') + (', q, ')) * (', r,')')
+```{python, results='asis'}
+from funciones import punto6
 
-x = result %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+punto6(
+  p = r'x^4-6x+1', 
+  q = r'3x^3-5x', 
+  r = r'x^4-x^2+2', 
+  operacion = r'\frac{p}{q}-r', 
+  lis = [0, -2, 2]
+  )
 ```
 
-$$[4p(x)+q(x)] \cdot r(x) = `r x`$$
 
-- $\frac{p(x)}{q(x)}-r(x)$
+- \mbox{\boldmath $\frac{p(x)}{r(x)} \cdot 2q(x)$ }
 
-```{r}
-result = paste('((', p, ') / (', q, ')) - (', r,')')
 
-x = result %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+```{python, results='asis'}
+from funciones import punto6
+
+punto6(
+  p = r'x^4-6x+1', 
+  q = r'3x^3-5x', 
+  r = r'x^4-x^2+2', 
+  operacion = r'2q \cdot (\frac{p}{r})', 
+  lis = [0, -2, 2]
+  )
 ```
 
-$$\frac{p(x)}{q(x)}-r(x) = `r x`$$
-
-
-- $\frac{p(x)}{r(x)} \cdot 2q(x)$
-
-```{r}
-result = paste('((', p, ') / (', r, ')) / 2 * (', q,')')
-
-x = result %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
-```
-
-$$\frac{p(x)}{r(x)} \cdot 2q(x) =`r x`$$
-
-Finalmente, en cada uno de los polinomios resultantes, evaluar en $0$, $-2$ y $2$
-
-
-
+\newpage
 
 ## Pregunta 7
 
-Dividir 
+**Dividir los polinomios, en cada uno de los polinomios resultantes (división, 
+divisor, dividendo y modulo), evaluar en \mbox{\boldmath $1$, $2$ y $3$ } **
 
-- $x^7-x^5+x^2-3$ entre $x^4+x^3+x^2+x$
 
-```{r}
-result = "(x^7-x^5+x^2-3) / (x^4+x^3+x^2+x)"
+- \mbox{\boldmath $x^7-x^5+x^2-3$ entre $x^4+x^3+x^2+x$ }
 
-x = result %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+
+```{python, results='asis'}
+from funciones import punto7
+
+punto7(
+  p_text = r'x^7-x^5+x^2-3', 
+  q_text = r'x^4+x^3+x^2+x', 
+  lis = [1, 2, 3]
+  )
 ```
 
-$$\frac{x^7-x^5+x^2-3}{x^4+x^3+x^2+x}=`r x`$$
+- \mbox{\boldmath $x^8+x^7-3x^6+x^5+2x^4+-3x^3+x^2-x-10$ entre 
+  $x^4+x^3-x^2+x+1$ }
 
+```{python, results='asis'}
+from funciones import punto7
 
-- $x^8+x^7-3x^6+x^5+2x^4+-3x^3+x^2-x-10$ entre $x^4+x^3-x^2+x+1$
-
-```{r}
-result = "(x^8+x^7-3*x^6+x^5+2*x^4+-3*x^3+x^2-x-10)/(x^4+x^3-x^2+x+1)"
-
-x = result %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+punto7(
+  p_text = r'x^8+x^7-3x^6+x^5+2x^4+-3x^3+x^2-x-10', 
+  q_text = r'x^4+x^3-x^2+x+1',
+  lis = [1, 2, 3]
+  )
 ```
 
-$$\frac{x^8+x^7-3x^6+x^5+2x^4+-3x^3+x^2-x-10}{x^4+x^3-x^2+x+1}=`r x`$$
-- $x^6-x^5+x^4-x^3+x^2-x+1$ entre $x+1$
+\newpage
 
-```{r}
-result = "(x^6-x^5+x^4-x^3+x^2-x+1)/(x+1)"
+- \mbox{\boldmath $x^6-x^5+x^4-x^3+x^2-x+1$ entre $x+1$ }
 
-x = result %>% y_fn("Simplify") %>% y_fn("TeXForm") %>% yac_str()
+```{python, results='asis'}
+from funciones import punto7
+
+punto7(
+  p_text = r'x^6-x^5+x^4-x^3+x^2-x+1', 
+  q_text = r'x+1', 
+  lis = [1, 2, 3]
+  )
 ```
-
-$$\frac{x^6-x^5+x^4-x^3+x^2-x+1}{x+1}=`r x`$$
-
-Finalmente, en cada uno de los polinomios resultantes, evaluar en $1$, $2$ y $3$

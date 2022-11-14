@@ -6,18 +6,24 @@ output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 
-#anclar con octave
-knitr::opts_chunk$set(engine.path = list(
-   octave = 'C:/Octave-7.1.0/mingw64/bin/octave-cli-7.1.0.exe'
-  ))
+library(readr)
+octavePath = read_tsv("../../octavePath.txt", show_col_types = FALSE)
+octavePath = colnames(octavePath)[1]
 
-# Anclar con el ambiente de python
+knitr::opts_chunk$set(
+    echo = TRUE,
+    
+    engine.path = list(
+        octave = octavePath
+      )
+  )
+
+# Anclar con el ambiente de Python
 library(reticulate)
-use_virtualenv('../../../.env', required=TRUE)
+use_virtualenv('../../.env', required=TRUE)
 
-# Cargar librerias de R
+# Cargar librerías de R
 library(Ryacas)
 library(polynom)
 library(pracma)

@@ -1,0 +1,1 @@
+C:/Octave-7.2.0/mingw64/bin/octave-cli-7.2.0.exe

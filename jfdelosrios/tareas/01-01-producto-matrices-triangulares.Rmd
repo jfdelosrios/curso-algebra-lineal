@@ -217,6 +217,7 @@ Basándote en lo que has obtenido anteriormente, completa las siguientes afirmac
 
 * El elemento ($i$, $i$)-ésimo de la diagonal principal es $\color{gray}{a_{ii}b_{ii}}$.
 
+\newpage
 
 # Calculando las entradas del producto  \break por debajo de la diagonal principal,  \break en la diagonal principal y por encima de la diagonal principal
 
@@ -260,7 +261,7 @@ $$
 que pasa a ser lo siguiente cuando sustituimos las entradas nulas
 
 $$
-AB_{42} = 0 \cdot b_{12} + 0 \cdot b_{22} + 0 + a_{44} \cdot 0 + a_{45} \cdot 0 + a_{46} \cdot 0 + a_{47} \cdot 0 + a_{48} \cdot 0 = 
+AB_{42} = 0 \cdot b_{12} + 0 \cdot b_{22} + 0 + a_{44} \cdot 0 + a_{45} \cdot 0 + a_{46} \cdot 0 + a_{47} \cdot 0 + a_{48} \cdot 0 = 0
 $$
 
 Siguiendo el ejemplo, calcula las siguientes entradas primero escribiendo todos los sumandos, a continuación
@@ -734,11 +735,13 @@ AB_{13,5} =
 \sum_{k=13}^{15} a_{13,k}b_{k5}
 $$
 
-El primer sumando cumple que $a_{13,k} = 0$ $\forall k \in \{1, . . . , 5\}$ ya que recordemos, $A \in U_{15}$, con lo cual $a_{i,j} = 0$ si, y solo si, $i > j$.
+El primer sumando cumple que $a_{13,k} = 0$ $\forall k \in \{1, . . . , 5\}$ ya que, $A \in U_{15}$, con lo cual $a_{i,j} = 0$ si, y solo si, $i > j$.
 
 De forma similar, el segundo sumando cumple tanto que $a_{13,k} = 0$ $\forall k \in \{6, . . . , 12\}$ como que $b_{k,5} = 0$ $\forall k \in \{6, . . . , 12\}$ porque en ambos casos $i > j$.
 
 Finalmente, siguiendo el mismo argumento que en los dos casos anteriores, el tercer sumando cumple que $b_{k,5} = 0$ $\forall k \in \{13, 15\}$ ya que de nuevo se cumple que $i > j$.
+
+\newpage
 
 Por tanto, lo que tenemos es que
 
@@ -798,8 +801,8 @@ Siguiendo un razonamiento similar al del caso de las entradas por debajo de la d
 
 $$
 AB_{77} =
-\sum_{k=1}^{6}
-a_{7k}b_{k7} + a_{77}b_{77} +
+\sum_{k=1}^{6} a_{7k}b_{k7} + 
+\sum_{k=7}^{7} a_{77}b_{77} +
 \sum_{k=8}^{15}
 a_{7k}b_{k7}
 $$
@@ -810,17 +813,65 @@ De forma similar, siguiendo el mismo argumento, el tercer sumando cumple tanto q
 porque $i > j$.
 De este modo,
 
-$$AB_{77} = 0 + a_{77}b_{77} + 0 = a_{77}b_{77}$$
+$$
+AB_{77} =
+\sum_{k=1}^{6} 0 \cdot b_{k7} + 
+\sum_{k=7}^{7} a_{77}b_{77} +
+\sum_{k=8}^{15} a_{7k} \cdot 0
+= 0 + a_{77}b_{77} + 0 = a_{77}b_{77}
+$$
 
 \newpage
 
 Calcula las siguientes entradas del producto siguiendo el razonamiento anterior:
 
-* $AB_{55} = {\color{gray} 0 + a_{55}b_{55} + 0 = a_{55}b_{55}}$
+* $AB_{55} =$
 
-* $AB_{10,10} = {\color{gray} 0 + a_{10,10}b_{10,10} + 0 = a_{10,10}b_{10,10}}$
+\begin{center}
+\color{gray}
 
-* $AB_{15,15} = {\color{gray} 0 + a_{15,15}b_{15,15} + 0 = a_{15,15}b_{15,15}}$
+$\displaystyle =\sum_{k=1}^{5-1} a_{5k}b_{k5} + \sum_{k=5}^{5} a_{55}b_{55} + \sum_{k=5+1}^{15} a_{5k}b_{k5} =$
+
+$\displaystyle = \sum_{k=1}^{5-1} 0 \cdot b_{k5} + \sum_{k=5}^{5} a_{55}b_{55} + \sum_{k=5+1}^{15} a_{5k} \cdot 0 = $
+
+$= 0 + a_{55}b_{55} + 0 =$
+
+$= a_{55}b_{55}$
+
+\end{center}
+
+* $AB_{10,10} =$
+
+
+\begin{center}
+\color{gray}
+
+$\displaystyle =\sum_{k=1}^{10-1} a_{10,k}b_{k,10} + \sum_{k=10}^{10} a_{10,10}b_{10,10} + \sum_{k=10+1}^{15} a_{10,k}b_{k,10} =$
+
+$\displaystyle = \sum_{k=1}^{10-1} 0 \cdot b_{k,10} + \sum_{k=10}^{10} a_{10,10}b_{10,10} + \sum_{k=10+1}^{15} a_{10,k} \cdot 0 = $
+
+$= 0 + a_{10,10}b_{10,10} + 0 =$
+
+$= a_{10,10}b_{10,10}$
+
+\end{center}
+
+* $AB_{15,15} =$
+
+\begin{center}
+\color{gray}
+
+$\displaystyle =\sum_{k=1}^{15-1} a_{15,k}b_{k,15} + \sum_{k=15}^{15} a_{15,15}b_{15,15} =$
+
+$\displaystyle = \sum_{k=1}^{15-1} 0 \cdot b_{k,15} + \sum_{k=15}^{15} a_{15,15}b_{15,15} = $
+
+$= 0 + a_{15,15}b_{15,15} =$
+
+$= a_{15,15}b_{15,15}$
+
+\end{center}
+
+\newpage
 
 # Entradas del producto por encima de la diagonal principal \break con partición de sumas
 

@@ -1,0 +1,13 @@
+alternativas gratuitas a Matlab, 
+
+1:05 mencionas a Udemy.
+
+8:44, es sympy, no simpy
+
+Es mejor tener los modulos instalados en un ambiente que directo en python
+use_virtualenv('./.env', required=TRUE)
+
+¿Qué hago si necesito mejorar mi nivel de programación para seguir el curso? muestra udemy
+
+
+Deberian estructurarlos de una dificultad menor a una mayor los problemas de los ejercicios de inducción matematica. 
