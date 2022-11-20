@@ -11,3 +11,5 @@ use_virtualenv('./.env', required=TRUE)
 
 
 Deberian estructurarlos de una dificultad menor a una mayor los problemas de los ejercicios de inducción matematica. 
+
+"video 42. Ejercicio2: Solución" mencionan a Udemy

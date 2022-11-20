@@ -5,34 +5,310 @@ author: "Curso Álgebra Lineal"
 output: pdf_document
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = NA)
+
+#Anclar con el ambiente de Python
+library(reticulate)
+use_virtualenv('../../../.env', required=TRUE)
 ```
 
 ## Pregunta 1
 
-Demostrar por inducción que si $x\in\mathbb{R}$, $x>0$ y $n\in\mathbb{N}$, $n\ge 2$, entonces $$(1+x)^n>1+nx$$
+**\mbox{\boldmath Demostrar por inducción que si $x\in\mathbb{R}$, $x>0$ y 
+$n\in\mathbb{N}$, $n\ge 2$, entonces $(1+x)^n>1+nx$ }**
 
 ## Pregunta 2
 
-Demostrar por inducción que la suma de los $n$ primeros números naturales es $$\frac{n(n+1)}{2}$$ Es decir, que $$1+2+3+\cdots+n =\frac{n(n+1)}{2} $$
+**Demostrar por inducción que la suma de los $n$ primeros números naturales es** 
+$$\frac{n(n+1)}{2}$$
+**Es decir, que**
+
+$$1+2+3+\cdots+n =\frac{n(n+1)}{2}$$
+
+Caso base: $n = 1$
+
+
+```{python, results='asis'}
+from sympy import Sum, Equivalent
+from sympy.abc import i, k, n
+
+a = Sum(i, (i, 1, n))
+
+b = n * (n + 1) / 2
+
+Equivalent(a.doit(), b.expand())
+
+```
+
+
+El caso base se cumple
+
+Caso inductivo
+
+Hipótesis de inducción: $n = k$
+
+$$1+2+3+\cdots+k = \frac{k(k+1)}{2}$$
+$$n = k+1$$
+$$1+2+3+\cdots+k + (k+1) =\frac{(k+1)((k+1)+1)}{2}$$
+
+Reemplazando ecuación 1 en ecuación 2
+
+$$\frac{k(k+1)}{2} + (k+1) =\frac{(k+1)((k+1)+1)}{2}$$
+
+
+
+```{python, results='asis'}
+from sympy import Equivalent
+from sympy.abc import k
+from latex2sympy2 import latex2sympy
+
+a = latex2sympy('k * (k + 1) / 2 + (k + 1)')
+
+b = latex2sympy('(k + 1) * ((k + 1) + 1) / 2')
+
+Equivalent(a.expand(), b.expand())
+
+```
+
+Por tanto, 
+
+$$1+2+3+\cdots+n =\frac{n(n+1)}{2}$$
+
+es verdad
+
+Comprobando:
+
+
+$$1+2+3+\cdots+n = \sum_{i=1}^{n}i$$
+Por consiguiente
+
+
+```{python, results='asis'}
+from sympy import Sum, Equivalent
+from sympy.abc import i, k, n
+
+a = Sum(i, (i, 1, n))
+
+b = n * (n + 1) / 2
+
+Equivalent(a.doit(), b.expand())
+
+```
 
 ## Pregunta 3
 
-Demostrar por inducción que $$1^2+2^2+3^2+\cdots+n^2 =\frac{n(n+1)(2n+1)}{6} $$
+**Demostrar por inducción que **
+$$1^2+2^2+3^2+\cdots+n^2 =\frac{n(n+1)(2n+1)}{6} $$
+
+Caso base: $n = 1$
+
+
+
+
+```{python, results='asis'}
+from sympy import Sum, Equivalent
+from sympy.abc import i, k, n
+
+a = Sum(i**2, (i, 1, n))
+
+b = n * (n + 1) * (2 * n + 1)/ 2
+
+Equivalent(a.doit().subs([(n,1)]), b.expand().subs([(n,1)]))
+
+```
+
+
+Caso base se cumple.
+
+
+Caso inductivo.
+
+Hipótesis inductiva: $n = k$
+
+
+$$1^2 + 2^2 + 3^2 + \cdots + k^2 = \frac{k (k + 1) (2k + 1)}{6} $$
+
+$$
+1^2 + 2^2 + 3^2 + \cdots + k^2 + (k + 1)^2
+= 
+\frac{(k + 1) ((k + 1) + 1) (2(k + 1) + 1)}{6} 
+$$
+
+$$
+\frac{k (k + 1) (2k + 1)}{6} + (k + 1)^2
+= 
+\frac{(k + 1) ((k + 1) + 1) (2(k + 1) + 1)}{6} 
+$$
+
+
+```{python, results='asis'}
+from sympy import Equivalent
+from sympy.abc import k
+from latex2sympy2 import latex2sympy
+
+a = latex2sympy(r'\frac{k (k + 1) (2k + 1)}{6} + (k + 1)^2')
+
+b = latex2sympy(r'\frac{(k + 1) ((k + 1) + 1) (2(k + 1) + 1)}{6}')
+
+Equivalent(a.expand(), b.expand())
+
+```
+
+Las expresiones son equivalentes, por consiguiente, 
+
+$$1^2+2^2+3^2+\cdots+n^2 =\frac{n(n+1)(2n+1)}{6} $$
 
 ## Pregunta 4
 
-Determinar si la suma de 3 enteros positivos consecutivos es siempre divisible por 6
+**Determinar si la suma de 3 enteros positivos consecutivos es siempre divisible
+por 6**
+
+primer entero: $n$
+
+$$n + (n+1) + (n+2) = 6x$$
+
+donde $x \in \mathbb{N}$
+
+Caso base:
+
+Si $n=1$
+
+Entonces
+
+$$1+(1+1)+(1+2) = 6x$$
+$$6 = 6x$$
+$$x=1$$
+
+El caso base salió satisfactorio.
+
+Caso inductivo:
+
+Si $n=k$
+
+entonces
+
+$$k + (k+1) + (k+2) = 6x$$
+
+Si $n=k+1$
+
+entonces
+
+$$(k+1) + ((k+1)+1) + ((k+1)+2) = 6x$$
+
+$$(k+1) + (k+2) + (k+3) = 6x$$
+
+$$k+1 + k+2 + k+3 = 6x$$
+
+$$k+(k+1)+(k+2)+3 = 6x$$
+Sustituyendo 
+
+$$6x+3 = 6x$$
+
+
+
+$$3 = 0$$
+
+Lo cual es falso, por consiguiente la suma de 3 enteros positivos consecutivos 
+no es siempre divisible entre 6.
 
 ## Pregunta 5
 
-Probar que si $$x_1 =0;\quad x_2 = 1,\quad x_n = 2x_{n-2}-x_{n-1}$$
+**Probar que si**
+$$x_1 =0;\quad x_2 = 1,\quad x_n = 2x_{n-2}-x_{n-1}$$
 
-entonces el término general de esta sucesión vale
+**entonces el término general de esta sucesión vale**
 
-$$x_n = \frac{2+(-2)^n}{6}\quad n=1,2,...$$
+$$x_n = \frac{2+(-2)^n}{6}\quad n=3,4,5, ...$$
+Caso base: $n = 1$
+
+$$x_1 = 0$$
+
+$$x_1 = \frac{2+(-2)^1}{6} = \frac{0}{6} = 0$$
+
+El caso base se cumple
+
+Caso inductivo:
+
+Si $n = k$
+
+$$x_k = 2x_{k-2} - x_{k-1}$$
+
+
+$$x_k = \frac{2+(-1)^k}{6}$$
+
+entonces:
+
+Si $n=k+1$
+
+entonces 
+
+$$x_{k+1} = 2x_{(k+1)-2}-x_{(k+1)-1}=$$
+$$= 2x_{k-1}-x_k =$$
+Por otro lado,
+
+$$x_{k+1} = \frac{2+(-2)^{k+1}}{6}$$
+
+Sustituyendo
+
+$$x_{k+1} = 2(\frac{2+(-2)^{k-1}}{6})-\frac{2+(-2)^k}{6}=$$
+
+Comparando:
+
+
+
+```{python, results='asis'}
+from sympy import Equivalent
+from sympy.abc import k
+from latex2sympy2 import latex2sympy
+
+a = latex2sympy(r'\frac{2+(-2)^{k+1}}{6}')
+
+b = latex2sympy(r'2(\frac{2+(-2)^{k-1}}{6})-\frac{2+(-2)^k}{6}')
+
+Equivalent(a.expand(), b.expand())
+
+```
+
+Por lo cual, la porposicion inicial es cierta.
 
 ## Pregunta 6
 
-Sean $a_1$ ,$a_2,\dots,a_n \in(-1,0]$. Probar que $$(1+a_1 )(1+ a_2)\dots (1+a_n)\ge1+a_1 + a_2 +\cdots+a_n$$
+**\mbox{\boldmath Sean $a_1$, $a_2, \dots , a_n \in (-1, 0]$. Probar que }**
+
+$$(1+a_1 )(1+ a_2)\dots (1+a_n) \ge 1+a_1 + a_2 +\cdots+a_n$$
+
+Caso base: $n=1$
+
+$$1 + a_1 \ge 1+a_1$$
+
+El caso base se cumple
+
+Caso inductivo:
+
+Hipótesis inductiva:
+
+si $n=k$ entonces
+
+$$(1+a_1 )(1+ a_2)\dots (1+a_k) \ge 1+a_1 + a_2 +\cdots + a_k$$
+
+
+si $n=k+1$ entonces
+
+$$(1+a_1 )(1+ a_2) \dots (1+a_k)(1+a_{k+1}) \ge 1+a_1 + a_2 + \cdots + a_k + a_{k+1}$$
+
+Sustituyendo 2 en 1
+
+$$
+(1+a_1 )(1+ a_2)\dots (1+a_k)(1+a_{k+1}) 
+\ge
+(1+a_1 + a_2 +\cdots + a_k)(1 + a_{k+1})
+$$
+
+$$
+(1+a_1 )(1+ a_2)\dots (1+a_k)(1+a_{k+1}) 
+\ge
+(1+a_1 + a_2 +\cdots + a_k) + a_{k+1}(1+a_1 + a_2 +\cdots + a_k)
+$$
+
