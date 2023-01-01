@@ -1,0 +1,523 @@
+---
+title: "Tema 1 - Ejercicio 2"
+author: "Curso Álgebra Lineal"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Ejercicio 1
+
+**Dada la matriz**
+
+$$A = \begin{pmatrix}5 & 0 & 3\\ 9 & 7 & 11\end{pmatrix}$$
+
+**¿Cuáles serían los elementos $a_{11}$ y $a_{13}$?**
+
+$$a_{11} = 5$$
+
+$$a_{13} = 3$$
+\newpage
+
+## Ejercicio 2
+
+**Dada la matriz** 
+
+$$
+A = \begin{pmatrix}
+2 & 3 & -1 & 2 \\
+3 & 2 & 5 & 0 \\
+-1 & 7 & 0 & 4 \\
+-4 & 1 & -3 & 7
+\end{pmatrix}
+$$ 
+
+**comprobar que se cumple $A + (-A) = (-A) + A = O$.**
+
+$$
+-A = 
+- \begin{pmatrix}
+2 & 3 & -1 & 2 \\
+3 & 2 & 5 & 0 \\
+-1 & 7 & 0 & 4 \\
+-4 & 1 & -3 & 7
+\end{pmatrix} =
+\begin{pmatrix}
+-2 & -3 & 1 & -2 \\
+-3 & -2 & -5 & 0 \\
+1 & -7 & 0 & -4 \\
+4 & -1 & 3 & -7
+\end{pmatrix}
+$$ 
+
+
+$$
+A + (-A) = 
+\begin{pmatrix}
+2 & 3 & -1 & 2 \\
+3 & 2 & 5 & 0 \\
+-1 & 7 & 0 & 4 \\
+-4 & 1 & -3 & 7
+\end{pmatrix} + 
+\begin{pmatrix}
+-2 & -3 & 1 & -2 \\
+-3 & -2 & -5 & 0 \\
+1 & -7 & 0 & -4 \\
+4 & -1 & 3 & -7
+\end{pmatrix} = 
+$$
+
+$$
+= \begin{pmatrix}
+2 - 2 & 3 - 3 & -1 + 1 & 2 -2 \\
+3 - 3 & 2 - 2 & 5 -5 & 0 - 0 \\
+-1 + 1 & 7 - 7 & 0 -0 & 4 - 4 \\
+-4 + 4 & 1 - 1& -3 + 3 & 7 -7
+\end{pmatrix} = 
+$$
+
+$$
+\begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} =
+$$
+$$
+= 0
+$$
+
+$$(-A) + A = -A = 
+\begin{pmatrix}
+-2 & -3 & 1 & -2 \\
+-3 & -2 & -5 & 0 \\
+1 & -7 & 0 & -4 \\
+4 & -1 & 3 & -7
+\end{pmatrix} +
+\begin{pmatrix}
+2 & 3 & -1 & 2 \\
+3 & 2 & 5 & 0 \\
+-1 & 7 & 0 & 4 \\
+-4 & 1 & -3 & 7
+\end{pmatrix} =
+$$
+
+$$
+=
+\begin{pmatrix}
+-2 + 2 & -3 + 3& 1 -1 & -2 + 2 \\
+-3 + 3  & -2 + 2& -5 + 5& 0 - 0 \\
+1 - 1 & -7 + 7& 0 -0 & -4 + 4 \\
+4 - 4 & -1 + 1 & 3 - 3 & -7 + 7
+\end{pmatrix} =
+$$
+
+$$
+\begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} =
+$$
+$$
+= 0
+$$
+
+
+
+
+Suponiendo que  matrices $A, -A \in \mathcal{M}_{m\times n}$ con 
+$A = (a_{ij}), -A = (-a_{ij})$, entonces:
+
+$A + (-A) = C$ donde $C = (c_{ij})$ con $c_{ij} = a_{ij} + b_{ij}$
+$\forall i=1,\dots,m$ y $\forall j=1,\dots,n$
+
+$(-A) + A = D$ donde $D = (D_{ij})$ con $d_{ij} = a_{ij} + b_{ij}$
+$\forall i=1,\dots,m$ y $\forall j=1,\dots,n$
+
+pero $a_{ij} + (-a_{ij}) = (-a_{ij}) + a_{ij} = 0$ ya que 
+$a_{ij} \in \mathbb{K}$ con $\mathbb{K}$ un cuerpo.
+
+Por lo tanto,
+
+$c_{ij} = d_{ij}$ $\forall i=1,...,m$ y $\forall j=1,...,n$ $\iff$ $C = D$
+$\iff$ $A + (-A) = (-A) + A = O$
+
+## Ejercicio 3
+
+Se consideran las matrices con coeficientes en $\mathbb{R}$
+
+$$
+A = \begin{pmatrix}1&2\\3&4\end{pmatrix}
+\quad
+B = \begin{pmatrix}1&0&1\\0&1&0\end{pmatrix}
+\quad
+C = \begin{pmatrix}1&-1\\0&1\\-1&0\end{pmatrix}
+$$
+
+Probar que $(AB)C = A(BC)$
+
+
+\newpage
+
+## Ejercicio 4
+
+
+$$
+A = \begin{pmatrix}2&3\\5&2\end{pmatrix}
+\qquad
+B=\begin{pmatrix}1&0&-1\\2&3&5\end{pmatrix}
+\qquad
+C=\begin{pmatrix}2&0&3\\-1&-2&0\end{pmatrix}
+$$
+
+$$
+A(B+C) = 
+\begin{pmatrix}2&3\\5&2\end{pmatrix}\begin{pmatrix}3&0&2\\1&1&5\end{pmatrix} =
+\begin{pmatrix}9&3&19\\17&2&20\end{pmatrix} 
+$$
+
+$$
+AB+AC = 
+\begin{pmatrix}8&9&13\\9&6&5\end{pmatrix} + 
+\begin{pmatrix}1&-6&6\\8&-4&15\end{pmatrix} = 
+\begin{pmatrix}9&3&19\\17&2&20\end{pmatrix}
+$$
+
+Escribe paso a paso la demostración de la propiedad distributiva del producto 
+respecto de la suma tomando como ejemplo las demostraciones anteriores.
+
+
+## Ejercicio 5
+
+Considerad las matrices con coeficientes en $\mathbb{R}$:
+
+$$
+A=\begin{pmatrix}1&0&1\\0&1&0\end{pmatrix}
+\quad
+B = \begin{pmatrix}1&-1\\0&1\\-1&0\end{pmatrix}
+$$
+
+Probar que:
+
+$$AI_3 = A$$
+$$I_3B=B$$
+
+
+## Ejercicio 6
+
+Escribe paso a paso la demostración de la propiedad del elemento neutro del 
+producto o elemento unidad tomando como ejemplo las demostraciones del ejercicio
+5.
+
+
+## Ejercicio 7
+
+Ejemplo
+
+$$
+AI_2 = 
+\begin{pmatrix}2&3\\-1&0\end{pmatrix}\begin{pmatrix}1&0\\0&1\end{pmatrix} = 
+\begin{pmatrix}2&3\\-1&0\end{pmatrix} =
+\begin{pmatrix}1&0\\0&1\end{pmatrix}\begin{pmatrix}2&3\\-1&0\end{pmatrix}=
+I_2A
+$$
+
+Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
+demostraciones anteriores.
+
+
+## Ejercicio 8
+
+Propiedad distributiva del producto por escalares respecto de la suma.
+
+$$
+\lambda(A+B) = \lambda A+\lambda B,\ \lambda\in\mathbb{K}
+$$
+
+Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
+demostraciones anteriores.
+
+
+## Ejercicio 9
+
+Propiedades distributiva del producto por matrices respecto de la suma de 
+escalares.
+
+$$(\lambda +\mu)A = \lambda A+\mu A,\ \lambda,\mu\in\mathbb{K}$$
+
+Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
+demostraciones anteriores.
+
+
+## Ejercicio 10
+
+Propiedad asociativa del producto de escalares por una matriz.
+
+$$
+(\lambda\mu)A = \lambda(\mu A), \ \lambda,\mu\in\mathbb{K}
+$$
+
+Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
+demostraciones anteriores.
+
+
+## Ejercicio 11
+
+Propiedad asociativa del producto de un escalar por dos matrices.
+ $$\lambda(AB) = (\lambda A)B,\ \lambda\in\mathbb{K}$$
+
+Ejemplo
+
+$$
+A = \begin{pmatrix}2&3\\5&2\end{pmatrix}
+\qquad 
+B=\begin{pmatrix}1&0&-1\\2&3&5\end{pmatrix}
+\qquad
+\lambda=3
+$$
+
+$$
+(\lambda A)B=
+\begin{pmatrix}6&9\\15&6\end{pmatrix}\begin{pmatrix}1&0&-1\\2&3&5\end{pmatrix}=
+\begin{pmatrix}24&27&39\\27&18&15\end{pmatrix}
+$$
+
+$$
+\lambda(AB)=
+3\cdot\begin{pmatrix}8&9&13\\9&6&5\end{pmatrix}=
+\begin{pmatrix}24&27&39\\27&18&15\end{pmatrix}
+$$
+
+Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
+demostraciones anteriores.
+
+
+## Ejercicio 12. 
+
+Ley de simplificación.
+ No se cumple la ley de simplificación en un producto.
+
+Ejemplo
+
+$$
+A = \begin{pmatrix}0&1\\0&2\end{pmatrix},\ 
+B=\begin{pmatrix}1&1\\3&4\end{pmatrix},\ 
+C=\begin{pmatrix}2&5\\3&4\end{pmatrix}
+\in\mathcal{M}_2(\mathbb{R})
+$$
+
+satisfacen $AB=AC$, pero en cambio $B\ne C$
+
+Comprueba que efectivamente $AB=AC$
+
+
+## Ejercicio 13. 
+Dadas
+
+$$
+A=\begin{pmatrix}1&0&0&0\\0&5&0&0\\0&0&-3&0\\0&0&0&2\end{pmatrix}
+\qquad 
+B=\begin{pmatrix}-2&0&0&0\\0&6&0&0\\0&0&3&0\\0&0&0&9\end{pmatrix}
+$$
+comprobad que $AB$ y $BA$ son matrices diagonales.
+
+
+## Ejercicio 14. 
+
+Dadas
+
+$$
+A=\begin{pmatrix}1&-1&4&3\\0&5&-2&1\\0&0&-3&7\\0&0&0&2\end{pmatrix}
+\qquad 
+B=\begin{pmatrix}-2&1&-1&2\\0&6&0&3\\0&0&3&-5\\0&0&0&-2\end{pmatrix}
+$$
+
+comprobad que $AB$ y $BA$ son matrices triangulares superiores.
+
+
+## Ejercicio 15. 
+
+Transpuesta de una suma.
+
+$$\left(\sum_{i=1}^r A_i\right)^t=\sum_{i=1}^rA_i^t$$
+
+Escribe paso a paso la demostración de esta propiedad
+
+
+## Ejercicio 16. 
+
+Comprobar que dadas 
+
+$$
+A = \begin{pmatrix}2&3\\3&2\\-1&0\end{pmatrix}
+\qquad 
+B=\begin{pmatrix}1&0\\3&6\\3&-2\end{pmatrix}
+\qquad 
+C = \begin{pmatrix}-2&4\\0&5\\7&2\end{pmatrix}
+$$
+
+$$(A+B+C)^t=A^t+B^t+C^t$$
+
+
+\newpage
+
+## Ejercicio 17. 
+
+Probad que 
+
+$$(AB)^t=B^tA^t$$ 
+
+donde 
+
+$$
+A=\begin{pmatrix}1&0&1\\0&1&0\end{pmatrix}
+\quad 
+B = \begin{pmatrix}1&-1\\0&1\\-1&0\end{pmatrix}
+$$
+
+
+## Ejercicio 18.
+
+Transpuesta de un producto.
+
+Escribe paso a paso la demostración de esta propiedad
+
+Si $A\in\mathcal{M}_{m\times n}(\mathbb{K})$ y 
+
+$$(AB)^t=B^tA^t\in\mathcal{M}_{p\times m}(\mathbb{K})$$
+
+$B\in\mathcal{M}_{n\times p}(\mathbb{K})$, entonces la traspuesta del producto 
+de $A$ por $B$ es el producto de las traspuestas pero con orden cambiado, es 
+decir:
+
+
+## Ejercicio 19. 
+
+siendo 
+
+$$A = \begin{pmatrix}1&2&3&4\\2&-1&5&6\\3&5&1&7\\4&6&7&-1\end{pmatrix}$$ 
+
+
+Calculad $A^t$ y veréis que $A^t=A$, es decir que $A$ es una matriz simétrica.
+
+
+## Ejercicio 20. 
+
+siendo
+
+$$A = \begin{pmatrix}0&2&3&4\\-2&0&5&6\\-3&-5&0&7\\-4&-6&-7&0\end{pmatrix}$$ 
+
+Calculad $A^t$ y veréis que $A^t=-A$, es decir que $A$ es una matriz 
+anti-simétrica.
+
+
+
+## Ejercicio 21. 
+
+$A = \begin{pmatrix}1&1&0\\0&1&0\\1&0&1\end{pmatrix}$ es una matriz regular cuya
+inversa es $A^{-1}=\begin{pmatrix}1&-1&0\\0&1&0\\-1&1&1\end{pmatrix}$
+
+Comprobad que efectivamente $AA^{-1}=A^{-1}A=I_3$
+
+
+## Ejercicio 22. 
+
+Matriz ortogonal.
+
+siendo
+
+$$A = \frac{1}{3}\begin{pmatrix}2&-2&1\\2&1&-2\\1&2&2\end{pmatrix}$$
+
+Comprobad que $A^tA=I_3$, es decir, $A$ es ortogonal
+
+
+## Ejercicio 23. 
+
+Sean 
+
+$$
+A = \begin{pmatrix}1&2\\7&8\end{pmatrix}
+\qquad 
+B=\begin{pmatrix}1&3\\-1&0\end{pmatrix}
+$$ 
+
+de donde 
+$$A^{-1} = -\frac{1}{6}\begin{pmatrix}8&-2\\-7&1\end{pmatrix}\qquad B^{-1}=\frac{1}{3}\begin{pmatrix}0&-3\\1&1\end{pmatrix}$$
+Comprobad que $B^{-1}A^{-1}=(AB)^{-1}$
+donde $(AB)^{-1}=-\frac{1}{18}\begin{pmatrix}21&-3\\1&-1\end{pmatrix}$
+
+
+## Ejercicio 24. 
+
+Demostración
+
+Para probar $(AB)^{-1}=B^{-1}A^{-1}$, lo que haremos será ver que 
+
+$$(AB)(B^{-1}A^{-1}) = (B^{-1}A^{-1})(AB) = I_n$$
+
+Por un lado, por la propiedad asociativa y como $B^{-1}$ es la inversa de $B$, 
+tenemos
+
+$$(AB)(B^{-1}A^{-1}) = A(BB^{-1})A^{-1} = AI_nA^{-1} = AA^{-1}$$
+
+ya que, recordemos, la matriz identidad $I_n$ actúa como elemento neutro del 
+producto de matrices. Ahora, como $A^{-1}$ es la inversa de $A$, se tiene que 
+
+$$(AB)(B^{-1}A^{-1}) = AA^{-1} = I_n$$ tal y como queríamos demostrar.
+
+Acabar la demostración siguiendo como modelo la parte que se ha llevado a cabo 
+hasta el momento.
+
+
+## Ejercicio 25 
+
+- Dad definiciones equivalentes para las matrices escalonadas por columnas y 
+matrices escalonadas reducidas por columnas.
+
+- Poned dos ejemplos de cada tipo de matriz.
+
+
+## Ejercicio 26
+
+Considerad la matriz $A\in\mathcal{M}_{3\times 4}(\mathbb{R})$ dada por
+
+$$A=\begin{pmatrix}1&1&3&5\\2&4&3&-2\\-2&2&-1&3\end{pmatrix}$$
+
+Calculad su matriz escalonada y su escalonada reducida por filas.
+
+
+## Ejercicio 27
+
+Considerad la matriz $A\in\mathcal{M}_{3\times 5}(\mathbb{R})$ dada por
+
+$$A=\begin{pmatrix}0&0&3&5&-1\\1&0&4&-1&2\\2&3&0&-2&3\end{pmatrix}$$
+
+Calculad su matriz escalonada y su escalonada reducida por filas.
+
+
+## Ejercicio 28
+
+- Calculad el rango de 
+
+$$A=\begin{pmatrix}1&1&3&5\\2&4&3&-2\\-2&2&-1&3\end{pmatrix}$$
+
+- Calculad el rango de 
+$$B = \begin{pmatrix}1&3&1\\0&3&-2\\2&2&3\end{pmatrix}$$
+
+
+## Ejercicio 29
+
+Sea $A$ la matriz cuadrada $A\in\mathcal{M}_n(\mathbb{K})$ dada por 
+
+$$\begin{pmatrix}1&3&-1\\0&2&3\\ -1&0&2\end{pmatrix}$$
+
+Razonad si $A$ es invertible y, si lo es, calculad su inversa.
+
+
