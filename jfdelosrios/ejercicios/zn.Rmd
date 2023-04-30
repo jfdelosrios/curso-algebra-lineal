@@ -1,0 +1,139 @@
+---
+title: "Zn"
+subtitle: "Números Complejos"
+author: "Curso Álgebra Lineal"
+output: pdf_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+```
+
+
+```{r}
+
+generarTabla <- function(z, operacion) {
+  
+  matriz <- matrix(nrow = z, ncol = z)
+  
+  for (i in 1:(z)) {
+    for (j in 1:(z)) {
+      
+      if(operacion == "+")
+        matriz[i, j] <- ((i - 1) + (j - 1)) %% z
+      
+      if(operacion == "*")
+        matriz[i, j] <- ((i - 1) * (j - 1)) %% z
+        
+    }
+  }
+  
+  matriz <- as.data.frame(matriz)
+  
+  colnames(matriz) <- 0:(z-1) 
+  rownames(matriz) <- 0:(z-1)
+  
+  return(matriz)
+  
+}
+
+
+detectarValorFaltante <- function(tabla1, valor){
+  
+  # hace el recorrido por columna
+  for (v in tabla1) 
+   {
+     if(length(v[v == valor]) == 0) {
+       return(TRUE)
+   }
+   
+  }
+  
+  return(FALSE)
+  
+}
+
+
+hacerEjercicio <- function(z){
+  
+  tablaSuma = generarTabla(z = z, operacion="+")
+  
+  writeLines("tabla suma")
+  print(tablaSuma)
+  writeLines("")
+  
+  esCuerpo = TRUE
+  
+  if(detectarValorFaltante(tabla = tablaSuma[,2:z], valor = 0)){
+    writeLines("Falta inverso aditivo")
+    esCuerpo = FALSE
+  }else{
+    writeLines("tiene todos los inversos aditivos")
+  }
+  writeLines("")
+  writeLines("")
+  
+  tablaMultiplicacion = generarTabla(z = z, operacion="*")
+  
+  writeLines("tabla multiplicación.")
+  print(tablaMultiplicacion)
+  writeLines("")
+  
+  if(detectarValorFaltante(tabla = tablaMultiplicacion[,2:z], valor = 1)){
+    writeLines("Falta inverso multiplicativo")
+    esCuerpo = FALSE
+  }else{
+    writeLines("tiene todos los inversos multiplicativos")
+  }
+  writeLines("")
+  writeLines("")
+  
+  if (esCuerpo) {
+    writeLines("Es cuerpo")
+  }else{
+    writeLines("No es cuerpo")
+  }
+}
+
+```
+
+\newpage
+
+## Ejercicio 1
+
+Hacer la tabla de $Z_4$ de suma y la tabla de multiplicación y decir si es un 
+cuerpo.
+
+```{r}
+
+hacerEjercicio(4)
+
+```
+\newpage
+
+## Ejercicio 2
+
+Hacer la tabla de $Z_5$ de suma y la tabla de multiplicación y decir si es un 
+cuerpo.
+
+```{r}
+
+hacerEjercicio(5)
+
+```
+\newpage
+
+## Ejercicio 3
+
+Hacer la tabla de $Z_6$ de suma y la tabla de multiplicación y decir si es un 
+cuerpo.
+
+```{r}
+
+hacerEjercicio(6)
+
+```
+

@@ -34,6 +34,7 @@ Resolved la ecuación $1+z+z^2=0$ para $z=(x,y)$ escribiendo
 $$
 (1,0)+(x,y)+(x,y)(x,y) = (0,0)
 $$
+Con lo anterior podemos afirmar que $x, y \in \mathbb{R}$.
 
 $$
 \begin{pmatrix}
@@ -144,6 +145,8 @@ z = 2 + 2i
 arg(z)
 ```
 
+\newpage
+
 - $z = (\sqrt{3}+i)^6$
 
 
@@ -155,8 +158,6 @@ z = (sqrt(3) + 1i) ^ 6
 print(Arg(z))
 ```
 
-
-\newpage
 
 ### Resolución en lenguaje `Python`.
 
@@ -178,6 +179,8 @@ z = (sqrt(3) + 1j) ^ 6
 arg(z)
 ```
 
+
+\newpage
 
 - $z = \frac{1+3i}{2}$
 
@@ -202,7 +205,6 @@ z = (1 + 3j) / 2
 print(cmath.phase(z))
 ```
 
-\newpage
 
 ### Resolución en lenguaje `Octave`.
 
@@ -211,6 +213,8 @@ z = (1 + 3i) / 2
 
 arg(z)
 ```
+
+\newpage
 
 - $z = -\frac{2}{1+\sqrt{3}i}$
 
