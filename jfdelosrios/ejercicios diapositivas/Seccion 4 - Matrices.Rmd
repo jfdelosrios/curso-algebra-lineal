@@ -1,5 +1,5 @@
 ---
-title: "Tema 1 - Ejercicio 2"
+title: "Sección 4 - Matrices"
 author: "Curso Álgebra Lineal"
 date: "`r Sys.Date()`"
 output: pdf_document
@@ -92,7 +92,7 @@ $$
 = 0
 $$
 
-$$(-A) + A = -A = 
+$$(-A) + A = 
 \begin{pmatrix}
 -2 & -3 & 1 & -2 \\
 -3 & -2 & -5 & 0 \\
