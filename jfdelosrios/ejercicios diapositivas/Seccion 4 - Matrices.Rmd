@@ -9,6 +9,7 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+\newpage
 
 ## Ejercicio 1
 
@@ -81,6 +82,7 @@ $$
 $$
 
 $$
+=
 \begin{pmatrix}
 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 \\
@@ -92,7 +94,8 @@ $$
 = 0
 $$
 
-$$(-A) + A = 
+$$
+(-A) + A = 
 \begin{pmatrix}
 -2 & -3 & 1 & -2 \\
 -3 & -2 & -5 & 0 \\
@@ -118,6 +121,7 @@ $$
 $$
 
 $$
+=
 \begin{pmatrix}
 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 \\
@@ -129,25 +133,7 @@ $$
 = 0
 $$
 
-
-
-
-Suponiendo que  matrices $A, -A \in \mathcal{M}_{m\times n}$ con 
-$A = (a_{ij}), -A = (-a_{ij})$, entonces:
-
-$A + (-A) = C$ donde $C = (c_{ij})$ con $c_{ij} = a_{ij} + b_{ij}$
-$\forall i=1,\dots,m$ y $\forall j=1,\dots,n$
-
-$(-A) + A = D$ donde $D = (D_{ij})$ con $d_{ij} = a_{ij} + b_{ij}$
-$\forall i=1,\dots,m$ y $\forall j=1,\dots,n$
-
-pero $a_{ij} + (-a_{ij}) = (-a_{ij}) + a_{ij} = 0$ ya que 
-$a_{ij} \in \mathbb{K}$ con $\mathbb{K}$ un cuerpo.
-
-Por lo tanto,
-
-$c_{ij} = d_{ij}$ $\forall i=1,...,m$ y $\forall j=1,...,n$ $\iff$ $C = D$
-$\iff$ $A + (-A) = (-A) + A = O$
+\newpage
 
 ## Ejercicio 3
 
@@ -164,35 +150,275 @@ $$
 Probar que $(AB)C = A(BC)$
 
 
+$$
+\left( AB \right) C= 
+$$
+
+$$
+= 
+\left(
+\begin{pmatrix}
+1&2\\3&4
+\end{pmatrix}
+\begin{pmatrix}
+1&0&1\\
+0&1&0
+\end{pmatrix}
+\right)
+\begin{pmatrix}1&-1\\0&1\\-1&0\end{pmatrix}
+=
+$$
+
+$$
+= 
+\begin{pmatrix}
+    1 \cdot 1 + 2 \cdot 0 
+    & 
+    1 \cdot 0 + 2 \cdot 1 
+    & 
+    1 \cdot 1 + 2 \cdot 0 
+  \\
+    3 \cdot 1 + 4 \cdot 0 
+    & 
+    3 \cdot 0 + 4 \cdot 1 
+    & 
+    3 \cdot 1 + 4 \cdot 0 
+  \\
+\end{pmatrix}
+\begin{pmatrix}1&-1\\0&1\\-1&0\end{pmatrix}
+=
+$$
+
+$$
+= 
+\begin{pmatrix}
+1 & 2 & 1 \\
+3 & 4 & 3 \\
+\end{pmatrix}
+\begin{pmatrix}1&-1\\0&1\\-1&0\end{pmatrix}
+=
+$$
+
+$$
+= 
+\begin{pmatrix}
+1 \cdot 1 + 2 \cdot 0 + 1 \cdot (-1) & 
+1 \cdot (-1) + 2 \cdot 1 + 1 \cdot 0
+\\
+3 \cdot 1 + 4 \cdot 0 + 3 \cdot (-1) & 
+3 \cdot (-1) + 4 \cdot 1 + 3 \cdot 0
+\end{pmatrix}
+=
+$$
+
+$$
+= 
+\begin{pmatrix}
+ 1 + 0 - 1
+ & 
+ -1 + 2 + 0
+\\
+ 3 + 0 -3
+ &
+ -3 + 4 + 0
+\end{pmatrix}
+=
+$$
+$$
+= 
+\begin{pmatrix}
+0 & 1 \\
+0 & 1
+\end{pmatrix}
+$$
+
+
+
+
+
+$$
+A \left( B  C \right) = 
+$$
+
+$$
+=
+\begin{pmatrix}1&2\\3&4\end{pmatrix}
+\left(
+\begin{pmatrix}1&0&1\\0&1&0\end{pmatrix}
+\begin{pmatrix}1&-1\\0&1\\-1&0\end{pmatrix}
+\right)
+=
+$$
+
+$$
+=
+\begin{pmatrix}
+    1&2
+  \\
+    3&4
+\end{pmatrix}
+\begin{pmatrix}
+    1 \cdot 1 + 0 \cdot 0 + 1 \cdot (-1)
+    &
+    1 \cdot (-1) + 0 \cdot 1 + 1 \cdot 0
+  \\
+    0 \cdot 1 + 1 \cdot 0 + 0 \cdot (-1)
+    &
+    0 \cdot (-1) + 1 \cdot 1 + 0 \cdot 0
+\end{pmatrix}
+=
+$$
+
+$$
+=
+\begin{pmatrix}
+    1&2
+  \\
+    3&4
+\end{pmatrix}
+\begin{pmatrix}
+    1-1 
+    &
+    -1
+  \\
+    0
+    &
+    1
+\end{pmatrix}
+=
+$$
+
+$$
+=
+\begin{pmatrix}
+    1&2
+  \\
+    3&4
+\end{pmatrix}
+\begin{pmatrix}
+  0 
+  & 
+  -1 
+  \\ 
+  0 
+  & 
+  1
+\end{pmatrix}
+=
+$$
+
+$$
+=
+\begin{pmatrix}
+    1 \cdot 0 + 2 \cdot 0 
+    &
+    1 \cdot (-1) + 2 \cdot 1
+  \\
+    3 \cdot 0 + 4 \cdot 0 
+    &
+    3 \cdot (-1) + 4 \cdot 1
+\end{pmatrix}
+=
+$$
+
+$$
+=
+\begin{pmatrix}
+    0
+    &
+    -1 + 2
+  \\
+    0
+    &
+    -3 + 4
+\end{pmatrix}
+=
+$$
+
+$$
+=
+\begin{pmatrix}
+    0
+    &
+    1
+  \\
+    0
+    &
+    1
+\end{pmatrix}
+$$
+
+
+
 \newpage
 
 ## Ejercicio 4
 
-
-$$
-A = \begin{pmatrix}2&3\\5&2\end{pmatrix}
-\qquad
-B=\begin{pmatrix}1&0&-1\\2&3&5\end{pmatrix}
-\qquad
-C=\begin{pmatrix}2&0&3\\-1&-2&0\end{pmatrix}
-$$
-
-$$
-A(B+C) = 
-\begin{pmatrix}2&3\\5&2\end{pmatrix}\begin{pmatrix}3&0&2\\1&1&5\end{pmatrix} =
-\begin{pmatrix}9&3&19\\17&2&20\end{pmatrix} 
-$$
-
-$$
-AB+AC = 
-\begin{pmatrix}8&9&13\\9&6&5\end{pmatrix} + 
-\begin{pmatrix}1&-6&6\\8&-4&15\end{pmatrix} = 
-\begin{pmatrix}9&3&19\\17&2&20\end{pmatrix}
-$$
-
 Escribe paso a paso la demostración de la propiedad distributiva del producto 
-respecto de la suma tomando como ejemplo las demostraciones anteriores.
+respecto de la suma.
 
+queremos demostrar que $A(B + C) = AB + AC$
+
+Donde:
+
+$A \in \mathcal{M}_{m\times n}(\mathbb{K})$, con $A = (a_{ij})$
+
+$B, C \in \mathcal{M}_{n\times p}(\mathbb{K})$, con 
+$B = (b_{jk})$, $C = (c_{jk})$,
+
+
+Por un lado, 
+
+$B + C = D$ donde $D = (d_{jk})_{n \times p}$ con $d_{jk} = b_{jk} + c_{jk}$ 
+$\forall j=1,\dots,n,\ k=1,\dots,p$
+
+Entonces $A(B + C) = AD = E$ donde $E = (e_{ik})_{m \times p}$, con 
+
+$$
+e_{ik} = \sum_{j=1}^{n} a_{ij}d_{jk} = \sum_{j=1}^{n} a_{ij}(b_{jk} + c_{jk})
+$$
+
+
+
+Por otro lado, 
+
+$AB = F$ donde $F = (f_{ik})_{m \times p}$, con 
+
+$$
+f_{ik} = \sum_{j=1}^{n} a_{ij}b_{jk}
+$$
+
+
+$AC = G$ donde $G = (g_{ik})_{m \times p}$, con 
+
+$$
+g_{ik} = \sum_{j=1}^{n} a_{ij}c_{jk}
+$$
+
+$AB + AC = F + G = H$ donde $H = (h_{ik})_{m \times p}$, con 
+
+$$
+h_{k} = \sum_{j=1}^{n} a_{ij}c_{jk} + \sum_{j=1}^{n} a_{ij}b_{jk}
+$$
+
+
+Pero 
+
+$$
+\sum_{j=1}^{n} a_{ij}(b_{jk} + c_{jk})
+= 
+\sum_{j=1}^{n} (a_{ij}b_{jk} + a_{ij}c_{jk})
+= 
+\sum_{j=1}^{n} a_{ij}c_{jk} + \sum_{j=1}^{n} a_{ij}b_{jk}
+$$
+
+
+Entonces, $E = H$
+
+Por consiguiente, $A(B+C) =AB+AC$
+
+
+\newpage
 
 ## Ejercicio 5
 
@@ -209,6 +435,7 @@ Probar que:
 $$AI_3 = A$$
 $$I_3B=B$$
 
+\newpage
 
 ## Ejercicio 6
 
@@ -216,6 +443,7 @@ Escribe paso a paso la demostración de la propiedad del elemento neutro del
 producto o elemento unidad tomando como ejemplo las demostraciones del ejercicio
 5.
 
+\newpage
 
 ## Ejercicio 7
 
@@ -232,6 +460,7 @@ $$
 Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
 demostraciones anteriores.
 
+\newpage
 
 ## Ejercicio 8
 
@@ -244,6 +473,7 @@ $$
 Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
 demostraciones anteriores.
 
+\newpage
 
 ## Ejercicio 9
 
@@ -255,6 +485,7 @@ $$(\lambda +\mu)A = \lambda A+\mu A,\ \lambda,\mu\in\mathbb{K}$$
 Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
 demostraciones anteriores.
 
+\newpage
 
 ## Ejercicio 10
 
@@ -267,6 +498,7 @@ $$
 Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
 demostraciones anteriores.
 
+\newpage
 
 ## Ejercicio 11
 
@@ -298,6 +530,7 @@ $$
 Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
 demostraciones anteriores.
 
+\newpage
 
 ## Ejercicio 12. 
 
@@ -317,6 +550,7 @@ satisfacen $AB=AC$, pero en cambio $B\ne C$
 
 Comprueba que efectivamente $AB=AC$
 
+\newpage
 
 ## Ejercicio 13. 
 Dadas
@@ -328,6 +562,7 @@ B=\begin{pmatrix}-2&0&0&0\\0&6&0&0\\0&0&3&0\\0&0&0&9\end{pmatrix}
 $$
 comprobad que $AB$ y $BA$ son matrices diagonales.
 
+\newpage
 
 ## Ejercicio 14. 
 
@@ -341,6 +576,7 @@ $$
 
 comprobad que $AB$ y $BA$ son matrices triangulares superiores.
 
+\newpage
 
 ## Ejercicio 15. 
 
@@ -350,6 +586,7 @@ $$\left(\sum_{i=1}^r A_i\right)^t=\sum_{i=1}^rA_i^t$$
 
 Escribe paso a paso la demostración de esta propiedad
 
+\newpage
 
 ## Ejercicio 16. 
 
@@ -382,6 +619,7 @@ A=\begin{pmatrix}1&0&1\\0&1&0\end{pmatrix}
 B = \begin{pmatrix}1&-1\\0&1\\-1&0\end{pmatrix}
 $$
 
+\newpage
 
 ## Ejercicio 18.
 
@@ -397,6 +635,7 @@ $B\in\mathcal{M}_{n\times p}(\mathbb{K})$, entonces la traspuesta del producto
 de $A$ por $B$ es el producto de las traspuestas pero con orden cambiado, es 
 decir:
 
+\newpage
 
 ## Ejercicio 19. 
 
@@ -407,6 +646,7 @@ $$A = \begin{pmatrix}1&2&3&4\\2&-1&5&6\\3&5&1&7\\4&6&7&-1\end{pmatrix}$$
 
 Calculad $A^t$ y veréis que $A^t=A$, es decir que $A$ es una matriz simétrica.
 
+\newpage
 
 ## Ejercicio 20. 
 
@@ -418,6 +658,7 @@ Calculad $A^t$ y veréis que $A^t=-A$, es decir que $A$ es una matriz
 anti-simétrica.
 
 
+\newpage
 
 ## Ejercicio 21. 
 
@@ -426,6 +667,7 @@ inversa es $A^{-1}=\begin{pmatrix}1&-1&0\\0&1&0\\-1&1&1\end{pmatrix}$
 
 Comprobad que efectivamente $AA^{-1}=A^{-1}A=I_3$
 
+\newpage
 
 ## Ejercicio 22. 
 
@@ -437,6 +679,7 @@ $$A = \frac{1}{3}\begin{pmatrix}2&-2&1\\2&1&-2\\1&2&2\end{pmatrix}$$
 
 Comprobad que $A^tA=I_3$, es decir, $A$ es ortogonal
 
+\newpage
 
 ## Ejercicio 23. 
 
@@ -453,6 +696,7 @@ $$A^{-1} = -\frac{1}{6}\begin{pmatrix}8&-2\\-7&1\end{pmatrix}\qquad B^{-1}=\frac
 Comprobad que $B^{-1}A^{-1}=(AB)^{-1}$
 donde $(AB)^{-1}=-\frac{1}{18}\begin{pmatrix}21&-3\\1&-1\end{pmatrix}$
 
+\newpage
 
 ## Ejercicio 24. 
 
@@ -475,6 +719,7 @@ $$(AB)(B^{-1}A^{-1}) = AA^{-1} = I_n$$ tal y como queríamos demostrar.
 Acabar la demostración siguiendo como modelo la parte que se ha llevado a cabo 
 hasta el momento.
 
+\newpage
 
 ## Ejercicio 25 
 
@@ -483,6 +728,7 @@ matrices escalonadas reducidas por columnas.
 
 - Poned dos ejemplos de cada tipo de matriz.
 
+\newpage
 
 ## Ejercicio 26
 
@@ -492,6 +738,7 @@ $$A=\begin{pmatrix}1&1&3&5\\2&4&3&-2\\-2&2&-1&3\end{pmatrix}$$
 
 Calculad su matriz escalonada y su escalonada reducida por filas.
 
+\newpage
 
 ## Ejercicio 27
 
@@ -501,6 +748,7 @@ $$A=\begin{pmatrix}0&0&3&5&-1\\1&0&4&-1&2\\2&3&0&-2&3\end{pmatrix}$$
 
 Calculad su matriz escalonada y su escalonada reducida por filas.
 
+\newpage
 
 ## Ejercicio 28
 
@@ -511,6 +759,7 @@ $$A=\begin{pmatrix}1&1&3&5\\2&4&3&-2\\-2&2&-1&3\end{pmatrix}$$
 - Calculad el rango de 
 $$B = \begin{pmatrix}1&3&1\\0&3&-2\\2&2&3\end{pmatrix}$$
 
+\newpage
 
 ## Ejercicio 29
 
