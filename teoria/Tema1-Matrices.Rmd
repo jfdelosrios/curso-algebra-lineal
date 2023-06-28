@@ -17,11 +17,20 @@ knitr::opts_chunk$set(echo = TRUE, comment = NA)
 
 ## ¿Qué es una matriz?
 
-<l class="definition">
-Matriz.
-</l> Sea $(\mathbb{K},+,.)$ un cuerpo conmutativo y $m,n\ge1$ enteros. Una matriz $m\times n$ sobre $\mathbb{K}$ (o de orden $m\times n$ sobre $\mathbb{K}$) es una tabla formada por elementos de $\mathbb{K}$ dispuestos en $m$ filas y $n$ columnas de la forma
+<l class="definition">Matriz.</l> 
+Sea $(\mathbb{K},+,.)$ un cuerpo conmutativo y $m,n\ge1$ enteros. Una matriz 
+$m\times n$ sobre $\mathbb{K}$ (o de orden $m\times n$ sobre $\mathbb{K}$) es 
+una tabla formada por elementos de $\mathbb{K}$ dispuestos en $m$ filas y $n$ 
+columnas de la forma
 
-$$\begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n}\\  a_{21} & a_{22} & \cdots & a_{2n}\\ \vdots & \vdots & \ddots & \vdots\\ a_{m1} & a_{m2} & \cdots & a_{mn}\\ \end{pmatrix}$$ 
+$$
+\begin{pmatrix}
+  a_{11} & a_{12} & \cdots & a_{1n} \\
+  a_{21} & a_{22} & \cdots & a_{2n} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{m1} & a_{m2} & \cdots & a_{mn} \\
+\end{pmatrix}
+$$ 
 
 con  $a_{ij}\in\mathbb{K};\ i=1,2,\dots,m;\ j=1,2,\dots,n$
 
@@ -540,15 +549,17 @@ Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
 
 ## Propiedades características
 
-<l class="prop">
-Elemento neutro del producto o elemento unidad.
-</l>  $$AI_n = A\qquad I_nB = B$$
+<l class="prop">Elemento neutro del producto o elemento unidad.</l>  
 
-Sean $A\in\mathcal{M}_{m\times n}(\mathbb{K})$ y $B\in\mathcal{M}_{n\times p}(\mathbb{K})$.
+$$AI_n = A\qquad I_nB = B$$
+
+Sean $A\in\mathcal{M}_{m\times n}(\mathbb{K})$ y 
+$B \in \mathcal{M}_{n \times p} (\mathbb{K})$.
 
 Se puede realizar el producto $AI_n$ y el resultado será una matriz $m\times n$.
 
-Análogamente, se puede realizar el producto $I_nB$ y el resultado será una matriz $n\times p$.
+Análogamente, se puede realizar el producto $I_nB$ 
+y el resultado será una matriz $n\times p$.
 
 Además, se puede comprobar que se verifica que
 $$AI_n = A\qquad\text{y}\qquad I_nB=B$$
