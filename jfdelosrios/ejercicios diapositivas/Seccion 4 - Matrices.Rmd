@@ -574,31 +574,10 @@ Sean:
 $A \in \mathcal{M}_{m \times n}(\mathbb{K})$, con $A = (a_{jk})_{m \times n}$
 $\forall j = 1, \dots, m, \ k = 1, \dots , n$
 
-$$
-A =
-\begin{pmatrix}
-  a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\  
-  a_{21} & a_{22} & a_{23} & \cdots & a_{2n} \\ 
-  a_{31} & a_{32} & a_{33} & \cdots & a_{3n} \\ 
-  \vdots & \vdots & \vdots & \ddots & \vdots \\ 
-  a_{m1} & a_{m2} & a_{m3} & \cdots & a_{mn} \\ 
-\end{pmatrix}
-$$
-
-
 \hfill 
 
 $I_n \in \mathcal{M}_n(\mathbb{K})$, con $I_n = (i_{lk})_n$
 
-$$
-\begin{pmatrix}
-  i_{11} & i_{12} & i_{13} & \cdots & i_{1n} \\  
-  i_{21} & i_{22} & i_{23} & \cdots & i_{2n} \\ 
-  i_{31} & i_{32} & i_{33} & \cdots & i_{3n} \\ 
-  \vdots & \vdots & \vdots & \ddots & \vdots \\ 
-  i_{n1} & i_{n2} & i_{n3} & \cdots & i_{nn} \\ 
-\end{pmatrix}
-$$
 
 Donde
 
@@ -606,15 +585,6 @@ si $l = k$ entonces $i_{lk} = 1$,
 
 si $l \neq k$ entonces $i_{lk} = 0$
 
-$$
-\begin{pmatrix}
-  1 & 0 & 0 & \cdots & 0 \\  
-  0 & 1 & 0 & \cdots & 0 \\ 
-  0 & 0 & 1 & \cdots & 0 \\ 
-  \vdots & \vdots & \vdots & \ddots & \vdots \\ 
-  0 & 0 & 0 & \cdots & 1 \\ 
-\end{pmatrix}
-$$
 
 \hfill 
 
@@ -622,98 +592,23 @@ $C = AI_n$, con $C = (c_{jk})_{m \times n}$ donde
 
 $$
 c_{jk} = 
-\sum_{l = 1}^{n} a_{jl} b_{lk}
+\sum_{l = 1}^{n} a_{jl} i_{lk}
 $$
+Por consiguiente,
+
+$$
+c_{jk} = a_{jk} i_{kk}
+$$
+
+$$
+c_{jk} = a_{jk}
+$$
+
+Por ende, $C = A$, lo que concluiría que $AI_n = A$
 
 \newpage
 
-Ahora, se pueden presentar 3 casos:
-
-si $k = 1$ y $k < n$, entonces
-
-$$
-c_{j1} 
-=
-  a_{j1} i_{11} +
-  a_{j2} i_{21} +
-  a_{j3} i_{31} +
-  \cdots +
-  a_{jn} i_{n1} 
-=
-$$
-$$
-=
-  a_{j1} \cdot 1 +
-  a_{j2} \cdot 0 +
-  a_{j3} \cdot 0 +
-  \cdots +
-  a_{jn} \cdot 0
-= 
-$$
-
-$$
-= a_{j1}
-$$
-
-si $k > 1$ y $k < n$, entonces
-
-$$
-c_{jk} 
-=
-  a_{j, 1} i_{1, k} +
-  \cdots+
-  a_{j, k-1} i_{k-1, k-1} +
-  a_{j, k} i_{k, k} +
-  a_{j, k+1} i_{k, k+1} +
-  \cdots +
-  a_{jn} i_{n1} 
-=
-$$
-
-$$
-=
-  a_{j, 1} \cdot 0 +
-  \cdots +
-  a_{j, k-1} \cdot 0  +
-  a_{j, k} i_{k, k} +
-  a_{j, k+1} \cdot 0  +
-  \cdots +
-  a_{jn} \cdot 0 
-=
-$$
-
-$$
-= a_{j, k}
-$$
-
-si $k > 1$ y $k = n$, entonces
-
-$$
-c_{jn} 
-=
-  a_{j, 1} i_{1, k} +
-  \cdots +
-  a_{jn} i_{nn} 
-=
-$$
-
-$$
-=
-  a_{j, 1} \cdot 0 +
-  \cdots +
-  a_{jn} \cdot 1 
-=
-$$
-
-$$
-= a_{j, n}
-$$
-
-Como $c_{jk} = a_{jk}$, entonces $C = A$, por consiguiente, $AI_n=A$ 
-
-\newpage
-
-Demostración que $I_n B = B$:
+Demostración que $I_m B = B$:
 
 \hfill 
 
@@ -722,75 +617,35 @@ Sean:
 
 \hfill 
 
-$A \in \mathcal{M}_{m \times n}(\mathbb{K})$, con $A = (a_{jk})_{m \times n}$
+$B \in \mathcal{M}_{m \times n}(\mathbb{K})$, con $B = (b_{jk})_{m \times n}$
 $\forall j = 1, \dots, m, \ k = 1, \dots , n$
-
-$$
-B =
-\begin{pmatrix}
-  b_{11} & b_{12} & b_{13} & \cdots & b_{1n} \\  
-  b_{21} & b_{22} & b_{23} & \cdots & b_{2n} \\ 
-  b_{31} & b_{32} & b_{33} & \cdots & b_{3n} \\ 
-  \vdots & \vdots & \vdots & \ddots & \vdots \\ 
-  b_{m1} & b_{m2} & b_{m3} & \cdots & b_{mn} \\ 
-\end{pmatrix}
-$$
 
 
 \hfill 
 
-$I_n \in \mathcal{M}_n(\mathbb{K})$, con $I_n = (i_{lk})_n$, donde
+$I_m \in \mathcal{M}_m(\mathbb{K})$, con $I_m = (i_{lk})_m$, donde
 
 si $l = k$ entonces $i_{lk} = 1$, 
 
 si $l \neq k$ entonces $i_{lk} = 0$ 
 
-Entonces, Sea $C = AI_n$, con $C = (c_{jk})_{m \times n}$ donde
+Entonces, Sea $I_m B = B$, con $C = (c_{jk})_{m \times n}$ donde
 
 $$
 c_{jk} = 
-\sum_{l = 1}^{n} a_{jl} b_{lk}
+\sum_{l = 1}^{m} i_{jl} b_{lk}
 $$
-Ahora, se pueden presentar 3 casos:
-
-si $k = 1$, entonces
+Por consiguiente,
 
 $$
-c_{jk} =
-c_{j1} = 
-a_{j1} i_{11}
-+
-\sum_{l = k + 1}^{n} a_{jl} i_{lk} = 
-a_{j1} i_{11} =
-a_{j1}
+c_{jk} = i_{jj} b_{jk}
 $$
 
-si $k > 1$ y $k < n$, entonces
-
 $$
-c_{jk} = 
-\sum_{l = 1}^{k - 1} a_{jl} i_{lk}
-+
-a_{jk} i_{kk}
-+
-\sum_{l = k + 1}^{n} a_{jl} i_{lk} = 
-a_{jk} i_{kk} =
-a_{jk}
+c_{jk} = b_{jk}
 $$
 
-si $k > 1$ y $k = n$, entonces
-
-$$
-c_{jk} = 
-c_{jn} = 
-\sum_{l = 1}^{k - 1} a_{jl} i_{lk}
-+
-a_{jk} i_{nn}
-= 
-a_{jk} i_{nn} =
-a_{jn}
-$$
-Como $c_{jk} = a_{jk}$, entonces $C = A$, por consiguiente, $AI_n=A$ 
+Por ende, $C = B$, lo que concluiría que $I_mB = B$
 
 
 
@@ -798,18 +653,35 @@ Como $c_{jk} = a_{jk}$, entonces $C = A$, por consiguiente, $AI_n=A$
 
 ## Ejercicio 7
 
-Ejemplo
+Escribe paso a paso la demostración de la propiedad 
 
 $$
-AI_2 = 
-\begin{pmatrix}2&3\\-1&0\end{pmatrix}\begin{pmatrix}1&0\\0&1\end{pmatrix} = 
-\begin{pmatrix}2&3\\-1&0\end{pmatrix} =
-\begin{pmatrix}1&0\\0&1\end{pmatrix}\begin{pmatrix}2&3\\-1&0\end{pmatrix}=
-I_2A
+AI_n = 
+I_mA
 $$
 
-Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
-demostraciones anteriores.
+tomando como ejemplo las demostraciones anteriores.
+
+Partiendo de que 
+
+$$
+AI_n = A
+$$
+
+y
+
+
+$$
+I_mA = A
+$$
+
+
+Se concluye que 
+
+
+$$
+AI_n = I_mA
+$$
 
 \newpage
 
@@ -818,11 +690,63 @@ demostraciones anteriores.
 Propiedad distributiva del producto por escalares respecto de la suma.
 
 $$
-\lambda(A+B) = \lambda A+\lambda B,\ \lambda\in\mathbb{K}
+\lambda (A + B) = \lambda A + \lambda B,\ \lambda \in \mathbb{K}
 $$
 
 Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
 demostraciones anteriores.
+
+$A \in \mathcal{M}_{m\times n}(\mathbb{K})$, con $A = (a_{ij})$
+
+$B \in \mathcal{M}_{m\times n}(\mathbb{K})$, con $B = (b_{ij})$
+
+$\lambda \in \mathbb{R}$
+
+Por un lado, 
+
+$C = A + B$ con $C = (c_{ij})_{m \times n}$ donde $c_{ij} = a_{ij} + b_{ij}$
+
+por lo cual $\lambda(A + B) = \lambda C = D = (d_{ij})_{m \times n}$ 
+
+donde 
+
+$$
+d{ij} 
+= 
+\lambda c_{ij} 
+= 
+\lambda (a_{ij} + b_{ij})
+=
+\lambda a_{ij} + \lambda b_{ij}
+$$
+Por otro lado,
+
+$E = \lambda A$ como $E = (e_{ij})_{m \times n}$ donde $e_{ij} = \lambda a_{ij}$
+
+$F = \lambda B$ como $F = (f_{ij})_{m \times n}$ donde $f_{ij} = \lambda b_{ij}$
+
+$H = E + F$, como $H = (h_{jk})_{m \times n}$, donde 
+
+$$
+h_{ij} = e_{ij} + f_{ij}
+$$
+
+$$
+h_{ij} = \lambda a_{ij} + \lambda b_{ij}
+$$
+
+Por lo anterior se infiere que
+
+$$
+d{ij} = h{ij}
+$$
+
+Por lo cual, se concluye 
+
+$$
+\lambda (A + B) = \lambda A + \lambda B,\ \lambda \in \mathbb{K}
+$$
+
 
 \newpage
 
@@ -831,10 +755,44 @@ demostraciones anteriores.
 Propiedades distributiva del producto por matrices respecto de la suma de 
 escalares.
 
-$$(\lambda +\mu)A = \lambda A+\mu A,\ \lambda,\mu\in\mathbb{K}$$
+$$(\lambda +\mu) A = \lambda A + \mu A,\ \lambda, \mu \in \mathbb{K}$$
 
 Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
 demostraciones anteriores.
+
+$A \in \mathcal{M}_{m\times n}(\mathbb{K})$, con $A = (a_{ij})$
+
+$\lambda$ y $\mu \in \mathbb{R}$
+
+Por un lado, 
+
+$B = (\lambda +\mu) A$, con $B = (b_{ij})$, 
+donde, $b_{ij} = (\lambda +\mu) a_{ij} = \lambda a_{ij} + \mu a_{ij}$
+
+Por otro lado,
+
+$C = \lambda A$ con $C = (c_{ij})_{m \times n}$ donde $c_{ij} = \lambda a_{ij}$
+
+$D = \mu A$ con $D = (d_{ij})_{m \times n}$ donde $d_{ij} = \mu a_{ij}$
+
+$E = C + D$ con $E = (e_{ij})_{m \times n}$ 
+
+donde 
+
+$$
+e_{ij} = \lambda a_{ij} + \mu a_{ij}
+$$
+
+Por lo anterior se infiere que
+
+$$
+e_{ij} = b_{ij}
+$$
+
+Por lo cual, se concluye 
+
+$$(\lambda + \mu) A = \lambda A + \mu A,\ \lambda, \mu \in \mathbb{K}$$
+
 
 \newpage
 
@@ -843,39 +801,51 @@ demostraciones anteriores.
 Propiedad asociativa del producto de escalares por una matriz.
 
 $$
-(\lambda\mu)A = \lambda(\mu A), \ \lambda,\mu\in\mathbb{K}
+(\lambda \mu)A = \lambda(\mu A), \ \lambda,\mu \in \mathbb{K}
 $$
 
 Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
 demostraciones anteriores.
+
+$A \in \mathcal{M}_{m\times n}(\mathbb{K})$, con $A = (a_{ij})$
+
+$\lambda$ y $\mu \in \mathbb{R}$
+
+Por un lado, 
+
+$B = (\lambda \mu) A$, con $B = (b_{ij})$, 
+donde, $b_{ij} = (\lambda \mu) a_{ij} = \lambda (\mu a_{ij})$
+
+Por otro lado,
+
+$D = \mu A$ con $D = (d_{ij})_{m \times n}$ donde $d_{ij} = \mu a_{ij}$
+
+$C = \lambda D$ con $C = (c_{ij})_{m \times n}$, 
+
+donde $c_{ij} = \lambda d_{ij} = \lambda (\mu a_{ij})$
+
+Por lo anterior se infiere que
+
+$$
+c_{ij} = b_{ij}
+$$
+
+Por lo cual, se concluye 
+
+$$
+(\lambda \mu)A = \lambda(\mu A), \ \lambda,\mu \in \mathbb{K}
+$$
+
+
 
 \newpage
 
 ## Ejercicio 11
 
 Propiedad asociativa del producto de un escalar por dos matrices.
- $$\lambda(AB) = (\lambda A)B,\ \lambda\in\mathbb{K}$$
-
-Ejemplo
 
 $$
-A = \begin{pmatrix}2&3\\5&2\end{pmatrix}
-\qquad 
-B=\begin{pmatrix}1&0&-1\\2&3&5\end{pmatrix}
-\qquad
-\lambda=3
-$$
-
-$$
-(\lambda A)B=
-\begin{pmatrix}6&9\\15&6\end{pmatrix}\begin{pmatrix}1&0&-1\\2&3&5\end{pmatrix}=
-\begin{pmatrix}24&27&39\\27&18&15\end{pmatrix}
-$$
-
-$$
-\lambda(AB)=
-3\cdot\begin{pmatrix}8&9&13\\9&6&5\end{pmatrix}=
-\begin{pmatrix}24&27&39\\27&18&15\end{pmatrix}
+\lambda (AB) = (\lambda A)B,\ \lambda \in \mathbb{K}
 $$
 
 Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
