@@ -851,6 +851,66 @@ $$
 Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
 demostraciones anteriores.
 
+$\lambda$ y $\mu \in \mathbb{R}$
+
+$A \in \mathcal{M}_{m \times n}(\mathbb{K})$, con $A = (a_{ij})$
+
+$B \in \mathcal{M}_{n \times p}(\mathbb{K})$, con $B = (b_{jk})$
+
+Por un lado, 
+
+$C = AB$, con $C = (c_{ik})_{m \times p}$,
+
+
+donde, 
+
+$$
+c_{ik} = \sum_{j = 1}^{m} a_{ij} b_{jk}
+$$
+$D = \lambda D = \lambda (AB)$, con $D = (d_{ik})_{m \times p}$
+
+donde 
+
+$$
+d_{ik} = 
+\lambda c_{ik} = 
+\lambda \sum_{j = 1}^{m} a_{ij} b_{jk} = 
+\lambda \sum_{j = 1}^{m} a_{ij} b_{jk}
+$$
+
+Por otro lado,
+
+$E = \lambda A$ con $E = (e_{ij})_{m \times n}$ donde $e_{ij} = \lambda a_{ij}$
+
+$F = EB = (\lambda A) B$ con $F = (f_{ik})_{m \times p}$, 
+
+donde 
+
+$$
+f_{ik} = 
+\sum_{j = 1}^{m} e_{ij} b_{jk} = 
+\sum_{j = 1}^{m} (\lambda a_{ij}) b_{jk}
+$$
+
+
+debido a que 
+
+
+
+$$
+\sum_{j = 1}^{m} (\lambda a_{ij}) b_{jk}
+=
+\lambda \sum_{j = 1}^{m} a_{ij} b_{jk}
+$$
+
+Por lo cual, se concluye 
+
+$$
+\lambda (AB) = (\lambda A)B,\ \lambda \in \mathbb{K}
+$$
+
+
+
 \newpage
 
 ## Ejercicio 12. 
