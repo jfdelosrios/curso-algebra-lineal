@@ -17,16 +17,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 $$A = \begin{pmatrix}5 & 0 & 3\\ 9 & 7 & 11\end{pmatrix}$$
 
-**¿Cuáles serían los elementos $a_{11}$ y $a_{13}$?**
+**¿Cuáles serían los elementos** $a_{11}$ y $a_{13}$?
 
 $$a_{11} = 5$$
 
 $$a_{13} = 3$$
+
 \newpage
 
 ## Ejercicio 2
 
-**Dada la matriz** 
+**Dada la matriz**
 
 $$
 A = \begin{pmatrix}
@@ -35,9 +36,9 @@ A = \begin{pmatrix}
 -1 & 7 & 0 & 4 \\
 -4 & 1 & -3 & 7
 \end{pmatrix}
-$$ 
+$$
 
-**comprobar que se cumple $A + (-A) = (-A) + A = O$.**
+**comprobar que se cumple** $A + (-A) = (-A) + A = O$.
 
 $$
 -A = 
@@ -53,8 +54,7 @@ $$
 1 & -7 & 0 & -4 \\
 4 & -1 & 3 & -7
 \end{pmatrix}
-$$ 
-
+$$
 
 $$
 A + (-A) = 
@@ -90,6 +90,7 @@ $$
 0 & 0 & 0 & 0
 \end{pmatrix} =
 $$
+
 $$
 = 0
 $$
@@ -129,6 +130,7 @@ $$
 0 & 0 & 0 & 0
 \end{pmatrix} =
 $$
+
 $$
 = 0
 $$
@@ -148,7 +150,6 @@ C = \begin{pmatrix}1&-1\\0&1\\-1&0\end{pmatrix}
 $$
 
 Probar que $(AB)C = A(BC)$
-
 
 $$
 \left( AB \right) C= 
@@ -224,6 +225,7 @@ $$
 \end{pmatrix}
 =
 $$
+
 $$
 = 
 \begin{pmatrix}
@@ -231,10 +233,6 @@ $$
 0 & 1
 \end{pmatrix}
 $$
-
-
-
-
 
 $$
 A \left( B  C \right) = 
@@ -348,14 +346,11 @@ $$
 \end{pmatrix}
 $$
 
-
-
 \newpage
 
 ## Ejercicio 4
 
-Escribe paso a paso la demostración de la propiedad distributiva del producto 
-respecto de la suma.
+Escribe paso a paso la demostración de la propiedad distributiva del producto respecto de la suma.
 
 queremos demostrar que $A(B + C) = AB + AC$
 
@@ -363,46 +358,39 @@ Donde:
 
 $A \in \mathcal{M}_{m\times n}(\mathbb{K})$, con $A = (a_{ij})$
 
-$B, C \in \mathcal{M}_{n\times p}(\mathbb{K})$, con 
-$B = (b_{jk})$, $C = (c_{jk})$,
+$B, C \in \mathcal{M}_{n\times p}(\mathbb{K})$, con $B = (b_{jk})$, $C = (c_{jk})$,
 
+Por un lado,
 
-Por un lado, 
+$B + C = D$ donde $D = (d_{jk})_{n \times p}$ con $d_{jk} = b_{jk} + c_{jk}$ $\forall j=1,\dots,n,\ k=1,\dots,p$
 
-$B + C = D$ donde $D = (d_{jk})_{n \times p}$ con $d_{jk} = b_{jk} + c_{jk}$ 
-$\forall j=1,\dots,n,\ k=1,\dots,p$
-
-Entonces $A(B + C) = AD = E$ donde $E = (e_{ik})_{m \times p}$, con 
+Entonces $A(B + C) = AD = E$ donde $E = (e_{ik})_{m \times p}$, con
 
 $$
 e_{ik} = \sum_{j=1}^{n} a_{ij}d_{jk} = \sum_{j=1}^{n} a_{ij}(b_{jk} + c_{jk})
 $$
 
+Por otro lado,
 
-
-Por otro lado, 
-
-$AB = F$ donde $F = (f_{ik})_{m \times p}$, con 
+$AB = F$ donde $F = (f_{ik})_{m \times p}$, con
 
 $$
 f_{ik} = \sum_{j=1}^{n} a_{ij}b_{jk}
 $$
 
-
-$AC = G$ donde $G = (g_{ik})_{m \times p}$, con 
+$AC = G$ donde $G = (g_{ik})_{m \times p}$, con
 
 $$
 g_{ik} = \sum_{j=1}^{n} a_{ij}c_{jk}
 $$
 
-$AB + AC = F + G = H$ donde $H = (h_{ik})_{m \times p}$, con 
+$AB + AC = F + G = H$ donde $H = (h_{ik})_{m \times p}$, con
 
 $$
 h_{k} = \sum_{j=1}^{n} a_{ij}c_{jk} + \sum_{j=1}^{n} a_{ij}b_{jk}
 $$
 
-
-Pero 
+Pero
 
 $$
 \sum_{j=1}^{n} a_{ij}(b_{jk} + c_{jk})
@@ -412,11 +400,9 @@ $$
 \sum_{j=1}^{n} a_{ij}c_{jk} + \sum_{j=1}^{n} a_{ij}b_{jk}
 $$
 
-
 Entonces, $E = H$
 
 Por consiguiente, $A(B+C) =AB+AC$
-
 
 \newpage
 
@@ -433,8 +419,8 @@ $$
 Probar que:
 
 $$AI_3 = A$$
-$$I_3B = B$$
 
+$$I_3B = B$$
 
 $$
 AI_3 = 
@@ -493,7 +479,6 @@ $$
 $$
 =A
 $$
-
 
 $$
 I_3B = 
@@ -556,37 +541,31 @@ $$= B$$
 
 ## Ejercicio 6
 
-Escribe paso a paso la demostración de la propiedad del elemento neutro del 
-producto o elemento unidad tomando como ejemplo las demostraciones del ejercicio
-5.
+Escribe paso a paso la demostración de la propiedad del elemento neutro del producto o elemento unidad tomando como ejemplo las demostraciones del ejercicio 5.
 
-\hfill 
+\hfill
 
 Demostración que $AI_n = A$:
 
-\hfill 
+\hfill
 
 Sean:
 
+\hfill
 
-\hfill 
+$A \in \mathcal{M}_{m \times n}(\mathbb{K})$, con $A = (a_{jk})_{m \times n}$ $\forall j = 1, \dots, m, \ k = 1, \dots , n$
 
-$A \in \mathcal{M}_{m \times n}(\mathbb{K})$, con $A = (a_{jk})_{m \times n}$
-$\forall j = 1, \dots, m, \ k = 1, \dots , n$
-
-\hfill 
+\hfill
 
 $I_n \in \mathcal{M}_n(\mathbb{K})$, con $I_n = (i_{lk})_n$
 
-
 Donde
 
-si $l = k$ entonces $i_{lk} = 1$, 
+si $l = k$ entonces $i_{lk} = 1$,
 
 si $l \neq k$ entonces $i_{lk} = 0$
 
-
-\hfill 
+\hfill
 
 $C = AI_n$, con $C = (c_{jk})_{m \times n}$ donde
 
@@ -594,6 +573,7 @@ $$
 c_{jk} = 
 \sum_{l = 1}^{n} a_{jl} i_{lk}
 $$
+
 Por consiguiente,
 
 $$
@@ -610,24 +590,21 @@ Por ende, $C = A$, lo que concluiría que $AI_n = A$
 
 Demostración que $I_m B = B$:
 
-\hfill 
+\hfill
 
 Sean:
 
+\hfill
 
-\hfill 
+$B \in \mathcal{M}_{m \times n}(\mathbb{K})$, con $B = (b_{jk})_{m \times n}$ $\forall j = 1, \dots, m, \ k = 1, \dots , n$
 
-$B \in \mathcal{M}_{m \times n}(\mathbb{K})$, con $B = (b_{jk})_{m \times n}$
-$\forall j = 1, \dots, m, \ k = 1, \dots , n$
-
-
-\hfill 
+\hfill
 
 $I_m \in \mathcal{M}_m(\mathbb{K})$, con $I_m = (i_{lk})_m$, donde
 
-si $l = k$ entonces $i_{lk} = 1$, 
+si $l = k$ entonces $i_{lk} = 1$,
 
-si $l \neq k$ entonces $i_{lk} = 0$ 
+si $l \neq k$ entonces $i_{lk} = 0$
 
 Entonces, Sea $I_m B = B$, con $C = (c_{jk})_{m \times n}$ donde
 
@@ -635,6 +612,7 @@ $$
 c_{jk} = 
 \sum_{l = 1}^{m} i_{jl} b_{lk}
 $$
+
 Por consiguiente,
 
 $$
@@ -647,13 +625,11 @@ $$
 
 Por ende, $C = B$, lo que concluiría que $I_mB = B$
 
-
-
 \newpage
 
 ## Ejercicio 7
 
-Escribe paso a paso la demostración de la propiedad 
+Escribe paso a paso la demostración de la propiedad
 
 $$
 AI_n = 
@@ -662,7 +638,7 @@ $$
 
 tomando como ejemplo las demostraciones anteriores.
 
-Partiendo de que 
+Partiendo de que
 
 $$
 AI_n = A
@@ -670,14 +646,11 @@ $$
 
 y
 
-
 $$
 I_mA = A
 $$
 
-
-Se concluye que 
-
+Se concluye que
 
 $$
 AI_n = I_mA
@@ -693,8 +666,7 @@ $$
 \lambda (A + B) = \lambda A + \lambda B,\ \lambda \in \mathbb{K}
 $$
 
-Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
-demostraciones anteriores.
+Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las demostraciones anteriores.
 
 $A \in \mathcal{M}_{m\times n}(\mathbb{K})$, con $A = (a_{ij})$
 
@@ -702,13 +674,13 @@ $B \in \mathcal{M}_{m\times n}(\mathbb{K})$, con $B = (b_{ij})$
 
 $\lambda \in \mathbb{R}$
 
-Por un lado, 
+Por un lado,
 
 $C = A + B$ con $C = (c_{ij})_{m \times n}$ donde $c_{ij} = a_{ij} + b_{ij}$
 
-por lo cual $\lambda(A + B) = \lambda C = D = (d_{ij})_{m \times n}$ 
+por lo cual $\lambda(A + B) = \lambda C = D = (d_{ij})_{m \times n}$
 
-donde 
+donde
 
 $$
 d{ij} 
@@ -719,13 +691,14 @@ d{ij}
 =
 \lambda a_{ij} + \lambda b_{ij}
 $$
+
 Por otro lado,
 
 $E = \lambda A$ como $E = (e_{ij})_{m \times n}$ donde $e_{ij} = \lambda a_{ij}$
 
 $F = \lambda B$ como $F = (f_{ij})_{m \times n}$ donde $f_{ij} = \lambda b_{ij}$
 
-$H = E + F$, como $H = (h_{jk})_{m \times n}$, donde 
+$H = E + F$, como $H = (h_{jk})_{m \times n}$, donde
 
 $$
 h_{ij} = e_{ij} + f_{ij}
@@ -741,33 +714,29 @@ $$
 d{ij} = h{ij}
 $$
 
-Por lo cual, se concluye 
+Por lo cual, se concluye
 
 $$
 \lambda (A + B) = \lambda A + \lambda B,\ \lambda \in \mathbb{K}
 $$
 
-
 \newpage
 
 ## Ejercicio 9
 
-Propiedades distributiva del producto por matrices respecto de la suma de 
-escalares.
+Propiedades distributiva del producto por matrices respecto de la suma de escalares.
 
 $$(\lambda +\mu) A = \lambda A + \mu A,\ \lambda, \mu \in \mathbb{K}$$
 
-Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
-demostraciones anteriores.
+Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las demostraciones anteriores.
 
 $A \in \mathcal{M}_{m\times n}(\mathbb{K})$, con $A = (a_{ij})$
 
 $\lambda$ y $\mu \in \mathbb{R}$
 
-Por un lado, 
+Por un lado,
 
-$B = (\lambda +\mu) A$, con $B = (b_{ij})$, 
-donde, $b_{ij} = (\lambda +\mu) a_{ij} = \lambda a_{ij} + \mu a_{ij}$
+$B = (\lambda +\mu) A$, con $B = (b_{ij})$, donde, $b_{ij} = (\lambda +\mu) a_{ij} = \lambda a_{ij} + \mu a_{ij}$
 
 Por otro lado,
 
@@ -775,9 +744,9 @@ $C = \lambda A$ con $C = (c_{ij})_{m \times n}$ donde $c_{ij} = \lambda a_{ij}$
 
 $D = \mu A$ con $D = (d_{ij})_{m \times n}$ donde $d_{ij} = \mu a_{ij}$
 
-$E = C + D$ con $E = (e_{ij})_{m \times n}$ 
+$E = C + D$ con $E = (e_{ij})_{m \times n}$
 
-donde 
+donde
 
 $$
 e_{ij} = \lambda a_{ij} + \mu a_{ij}
@@ -789,10 +758,9 @@ $$
 e_{ij} = b_{ij}
 $$
 
-Por lo cual, se concluye 
+Por lo cual, se concluye
 
 $$(\lambda + \mu) A = \lambda A + \mu A,\ \lambda, \mu \in \mathbb{K}$$
-
 
 \newpage
 
@@ -804,23 +772,21 @@ $$
 (\lambda \mu)A = \lambda(\mu A), \ \lambda,\mu \in \mathbb{K}
 $$
 
-Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
-demostraciones anteriores.
+Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las demostraciones anteriores.
 
 $A \in \mathcal{M}_{m\times n}(\mathbb{K})$, con $A = (a_{ij})$
 
 $\lambda$ y $\mu \in \mathbb{R}$
 
-Por un lado, 
+Por un lado,
 
-$B = (\lambda \mu) A$, con $B = (b_{ij})$, 
-donde, $b_{ij} = (\lambda \mu) a_{ij} = \lambda (\mu a_{ij})$
+$B = (\lambda \mu) A$, con $B = (b_{ij})$, donde, $b_{ij} = (\lambda \mu) a_{ij} = \lambda (\mu a_{ij})$
 
 Por otro lado,
 
 $D = \mu A$ con $D = (d_{ij})_{m \times n}$ donde $d_{ij} = \mu a_{ij}$
 
-$C = \lambda D$ con $C = (c_{ij})_{m \times n}$, 
+$C = \lambda D$ con $C = (c_{ij})_{m \times n}$,
 
 donde $c_{ij} = \lambda d_{ij} = \lambda (\mu a_{ij})$
 
@@ -830,13 +796,11 @@ $$
 c_{ij} = b_{ij}
 $$
 
-Por lo cual, se concluye 
+Por lo cual, se concluye
 
 $$
 (\lambda \mu)A = \lambda(\mu A), \ \lambda,\mu \in \mathbb{K}
 $$
-
-
 
 \newpage
 
@@ -848,8 +812,7 @@ $$
 \lambda (AB) = (\lambda A)B,\ \lambda \in \mathbb{K}
 $$
 
-Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las 
-demostraciones anteriores.
+Escribe paso a paso la demostración de esta propiedad tomando como ejemplo las demostraciones anteriores.
 
 $\lambda$ y $\mu \in \mathbb{R}$
 
@@ -857,19 +820,19 @@ $A \in \mathcal{M}_{m \times n}(\mathbb{K})$, con $A = (a_{ij})$
 
 $B \in \mathcal{M}_{n \times p}(\mathbb{K})$, con $B = (b_{jk})$
 
-Por un lado, 
+Por un lado,
 
 $C = AB$, con $C = (c_{ik})_{m \times p}$,
 
-
-donde, 
+donde,
 
 $$
 c_{ik} = \sum_{j = 1}^{m} a_{ij} b_{jk}
 $$
+
 $D = \lambda D = \lambda (AB)$, con $D = (d_{ik})_{m \times p}$
 
-donde 
+donde
 
 $$
 d_{ik} = 
@@ -882,9 +845,9 @@ Por otro lado,
 
 $E = \lambda A$ con $E = (e_{ij})_{m \times n}$ donde $e_{ij} = \lambda a_{ij}$
 
-$F = EB = (\lambda A) B$ con $F = (f_{ik})_{m \times p}$, 
+$F = EB = (\lambda A) B$ con $F = (f_{ik})_{m \times p}$,
 
-donde 
+donde
 
 $$
 f_{ik} = 
@@ -892,10 +855,7 @@ f_{ik} =
 \sum_{j = 1}^{m} (\lambda a_{ij}) b_{jk}
 $$
 
-
-debido a que 
-
-
+debido a que
 
 $$
 \sum_{j = 1}^{m} (\lambda a_{ij}) b_{jk}
@@ -903,20 +863,17 @@ $$
 \lambda \sum_{j = 1}^{m} a_{ij} b_{jk}
 $$
 
-Por lo cual, se concluye 
+Por lo cual, se concluye
 
 $$
 \lambda (AB) = (\lambda A)B,\ \lambda \in \mathbb{K}
 $$
 
-
-
 \newpage
 
-## Ejercicio 12. 
+## Ejercicio 12.
 
-Ley de simplificación.
- No se cumple la ley de simplificación en un producto.
+Ley de simplificación. No se cumple la ley de simplificación en un producto.
 
 Ejemplo
 
@@ -933,7 +890,8 @@ Comprueba que efectivamente $AB=AC$
 
 \newpage
 
-## Ejercicio 13. 
+## Ejercicio 13.
+
 Dadas
 
 $$
@@ -941,11 +899,12 @@ A=\begin{pmatrix}1&0&0&0\\0&5&0&0\\0&0&-3&0\\0&0&0&2\end{pmatrix}
 \qquad 
 B=\begin{pmatrix}-2&0&0&0\\0&6&0&0\\0&0&3&0\\0&0&0&9\end{pmatrix}
 $$
+
 comprobad que $AB$ y $BA$ son matrices diagonales.
 
 \newpage
 
-## Ejercicio 14. 
+## Ejercicio 14.
 
 Dadas
 
@@ -959,7 +918,7 @@ comprobad que $AB$ y $BA$ son matrices triangulares superiores.
 
 \newpage
 
-## Ejercicio 15. 
+## Ejercicio 15.
 
 Transpuesta de una suma.
 
@@ -969,9 +928,9 @@ Escribe paso a paso la demostración de esta propiedad
 
 \newpage
 
-## Ejercicio 16. 
+## Ejercicio 16.
 
-Comprobar que dadas 
+Comprobar que dadas
 
 $$
 A = \begin{pmatrix}2&3\\3&2\\-1&0\end{pmatrix}
@@ -983,16 +942,15 @@ $$
 
 $$(A+B+C)^t=A^t+B^t+C^t$$
 
-
 \newpage
 
-## Ejercicio 17. 
+## Ejercicio 17.
 
-Probad que 
+Probad que
 
-$$(AB)^t=B^tA^t$$ 
+$$(AB)^t=B^tA^t$$
 
-donde 
+donde
 
 $$
 A=\begin{pmatrix}1&0&1\\0&1&0\end{pmatrix}
@@ -1008,49 +966,43 @@ Transpuesta de un producto.
 
 Escribe paso a paso la demostración de esta propiedad
 
-Si $A\in\mathcal{M}_{m\times n}(\mathbb{K})$ y 
+Si $A\in\mathcal{M}_{m\times n}(\mathbb{K})$ y
 
 $$(AB)^t=B^tA^t\in\mathcal{M}_{p\times m}(\mathbb{K})$$
 
-$B\in\mathcal{M}_{n\times p}(\mathbb{K})$, entonces la traspuesta del producto 
-de $A$ por $B$ es el producto de las traspuestas pero con orden cambiado, es 
-decir:
+$B\in\mathcal{M}_{n\times p}(\mathbb{K})$, entonces la traspuesta del producto de $A$ por $B$ es el producto de las traspuestas pero con orden cambiado, es decir:
 
 \newpage
 
-## Ejercicio 19. 
+## Ejercicio 19.
 
-siendo 
+siendo
 
-$$A = \begin{pmatrix}1&2&3&4\\2&-1&5&6\\3&5&1&7\\4&6&7&-1\end{pmatrix}$$ 
-
+$$A = \begin{pmatrix}1&2&3&4\\2&-1&5&6\\3&5&1&7\\4&6&7&-1\end{pmatrix}$$
 
 Calculad $A^t$ y veréis que $A^t=A$, es decir que $A$ es una matriz simétrica.
 
 \newpage
 
-## Ejercicio 20. 
+## Ejercicio 20.
 
 siendo
 
-$$A = \begin{pmatrix}0&2&3&4\\-2&0&5&6\\-3&-5&0&7\\-4&-6&-7&0\end{pmatrix}$$ 
+$$A = \begin{pmatrix}0&2&3&4\\-2&0&5&6\\-3&-5&0&7\\-4&-6&-7&0\end{pmatrix}$$
 
-Calculad $A^t$ y veréis que $A^t=-A$, es decir que $A$ es una matriz 
-anti-simétrica.
-
+Calculad $A^t$ y veréis que $A^t=-A$, es decir que $A$ es una matriz anti-simétrica.
 
 \newpage
 
-## Ejercicio 21. 
+## Ejercicio 21.
 
-$A = \begin{pmatrix}1&1&0\\0&1&0\\1&0&1\end{pmatrix}$ es una matriz regular cuya
-inversa es $A^{-1}=\begin{pmatrix}1&-1&0\\0&1&0\\-1&1&1\end{pmatrix}$
+$A = \begin{pmatrix}1&1&0\\0&1&0\\1&0&1\end{pmatrix}$ es una matriz regular cuya inversa es $A^{-1}=\begin{pmatrix}1&-1&0\\0&1&0\\-1&1&1\end{pmatrix}$
 
 Comprobad que efectivamente $AA^{-1}=A^{-1}A=I_3$
 
 \newpage
 
-## Ejercicio 22. 
+## Ejercicio 22.
 
 Matriz ortogonal.
 
@@ -1062,52 +1014,47 @@ Comprobad que $A^tA=I_3$, es decir, $A$ es ortogonal
 
 \newpage
 
-## Ejercicio 23. 
+## Ejercicio 23.
 
-Sean 
+Sean
 
 $$
 A = \begin{pmatrix}1&2\\7&8\end{pmatrix}
 \qquad 
 B=\begin{pmatrix}1&3\\-1&0\end{pmatrix}
-$$ 
+$$
 
-de donde 
-$$A^{-1} = -\frac{1}{6}\begin{pmatrix}8&-2\\-7&1\end{pmatrix}\qquad B^{-1}=\frac{1}{3}\begin{pmatrix}0&-3\\1&1\end{pmatrix}$$
-Comprobad que $B^{-1}A^{-1}=(AB)^{-1}$
-donde $(AB)^{-1}=-\frac{1}{18}\begin{pmatrix}21&-3\\1&-1\end{pmatrix}$
+de donde
+
+$$A^{-1} = -\frac{1}{6}\begin{pmatrix}8&-2\\-7&1\end{pmatrix}\qquad B^{-1}=\frac{1}{3}\begin{pmatrix}0&-3\\1&1\end{pmatrix}$$ Comprobad que $B^{-1}A^{-1}=(AB)^{-1}$ donde $(AB)^{-1}=-\frac{1}{18}\begin{pmatrix}21&-3\\1&-1\end{pmatrix}$
 
 \newpage
 
-## Ejercicio 24. 
+## Ejercicio 24.
 
 Demostración
 
-Para probar $(AB)^{-1}=B^{-1}A^{-1}$, lo que haremos será ver que 
+Para probar $(AB)^{-1}=B^{-1}A^{-1}$, lo que haremos será ver que
 
 $$(AB)(B^{-1}A^{-1}) = (B^{-1}A^{-1})(AB) = I_n$$
 
-Por un lado, por la propiedad asociativa y como $B^{-1}$ es la inversa de $B$, 
-tenemos
+Por un lado, por la propiedad asociativa y como $B^{-1}$ es la inversa de $B$, tenemos
 
 $$(AB)(B^{-1}A^{-1}) = A(BB^{-1})A^{-1} = AI_nA^{-1} = AA^{-1}$$
 
-ya que, recordemos, la matriz identidad $I_n$ actúa como elemento neutro del 
-producto de matrices. Ahora, como $A^{-1}$ es la inversa de $A$, se tiene que 
+ya que, recordemos, la matriz identidad $I_n$ actúa como elemento neutro del producto de matrices. Ahora, como $A^{-1}$ es la inversa de $A$, se tiene que
 
 $$(AB)(B^{-1}A^{-1}) = AA^{-1} = I_n$$ tal y como queríamos demostrar.
 
-Acabar la demostración siguiendo como modelo la parte que se ha llevado a cabo 
-hasta el momento.
+Acabar la demostración siguiendo como modelo la parte que se ha llevado a cabo hasta el momento.
 
 \newpage
 
-## Ejercicio 25 
+## Ejercicio 25
 
-- Dad definiciones equivalentes para las matrices escalonadas por columnas y 
-matrices escalonadas reducidas por columnas.
+-   Dad definiciones equivalentes para las matrices escalonadas por columnas y matrices escalonadas reducidas por columnas.
 
-- Poned dos ejemplos de cada tipo de matriz.
+-   Poned dos ejemplos de cada tipo de matriz.
 
 \newpage
 
@@ -1133,21 +1080,18 @@ Calculad su matriz escalonada y su escalonada reducida por filas.
 
 ## Ejercicio 28
 
-- Calculad el rango de 
+-   Calculad el rango de
 
 $$A=\begin{pmatrix}1&1&3&5\\2&4&3&-2\\-2&2&-1&3\end{pmatrix}$$
 
-- Calculad el rango de 
-$$B = \begin{pmatrix}1&3&1\\0&3&-2\\2&2&3\end{pmatrix}$$
+-   Calculad el rango de $$B = \begin{pmatrix}1&3&1\\0&3&-2\\2&2&3\end{pmatrix}$$
 
 \newpage
 
 ## Ejercicio 29
 
-Sea $A$ la matriz cuadrada $A\in\mathcal{M}_n(\mathbb{K})$ dada por 
+Sea $A$ la matriz cuadrada $A\in\mathcal{M}_n(\mathbb{K})$ dada por
 
 $$\begin{pmatrix}1&3&-1\\0&2&3\\ -1&0&2\end{pmatrix}$$
 
 Razonad si $A$ es invertible y, si lo es, calculad su inversa.
-
-
