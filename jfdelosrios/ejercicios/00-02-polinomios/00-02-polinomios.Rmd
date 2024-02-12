@@ -4,8 +4,6 @@ author: "Curso Álgebra Lineal"
 subtitle: Polinomios
 output:
   pdf_document: default
-  html_document:
-    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -20,26 +18,21 @@ Resolver a mano
 
 ## Pregunta 1
 
-**¿Son las siguientes expresiones algebraicas polinomios en 
-\mbox{\boldmath$\mathbb{R}[x]$}? En caso afirmativo, ¿qué grado tienen?**
+**¿Son las siguientes expresiones algebraicas polinomios en** $\mathbb{R}[x]$ **? En caso afirmativo, ¿qué grado tienen?**
 
-- \mbox{\boldmath $1+x+x^2+x^3+x^4+\cdots+x^n$ } Es un polinomio de grado $n$.
-- \mbox{\boldmath $1+\frac{1}{x}+x^2+\frac{1}{x^3}$ } no es un polinomio ya que 
-  algunos términos tienen exponente negativo.
-- \mbox{\boldmath $1-x^{-2}$ } no es un polinomio ya que algunos términos tienen 
-  exponente negativo.
-- \mbox{\boldmath $\sqrt{x}+3$ } no es un polinomio ya que algunos términos no 
-  tienen como exponente un natural.
-- \mbox{\boldmath $x+x^2i$ }
-- \mbox{\boldmath $(x+1)^2$ } representa un polinomio de grado 2.
-- \mbox{\boldmath $x+x^5+x^{10001}$ } es un polinomio de grado 10001.
+-   $1+x+x^2+x^3+x^4+\cdots+x^n$ Es un polinomio de grado $n$.
+-   $1+\frac{1}{x}+x^2+\frac{1}{x^3}$ no es un polinomio ya que algunos términos tienen exponente negativo.
+-   $1-x^{-2}$ no es un polinomio ya que algunos términos tienen exponente negativo.
+-   $\sqrt{x}+3$ no es un polinomio ya que algunos términos no tienen como exponente un natural.
+-   $x+x^2i$
+-   $(x+1)^2$ representa un polinomio de grado $2$.
+-   $x+x^5+x^{10001}$ es un polinomio de grado $10001$.
 
 \newpage
 
 ## Pregunta 2
 
-**\mbox{\boldmath Hallar $\alpha$ y $\beta$ para que $x^5-\alpha x+\beta$ sea 
-divisible entre $x^2-4$, $\forall x$.}**
+**Hallar** $\alpha$ **y** $\beta$ **para que** $x^5-\alpha x+\beta$ **sea divisible entre** $x^2-4$**,** $\forall x$**.**
 
 ```{python, results='asis'}
 from funciones import encontrar
@@ -51,9 +44,7 @@ encontrar(
 )
 ```
 
-
 ### Comprobando
-
 
 ```{python, results='asis'}
 
@@ -67,13 +58,11 @@ comprobar2a4(
     
 ```
 
-
 \newpage
 
 ## Pregunta 3
 
-**\mbox{\boldmath Hallar $\alpha$ y $\beta$ para que $x^3-\alpha x^2+\beta x+3$ 
-sea divisible entre $x^2+x+1$, $\forall x$.}**
+**Hallar** $\alpha$ **y** $\beta$ **para que** $x^3-\alpha x^2+\beta x+3$ **sea divisible entre** $x^2+x+1$**,** $\forall x$**.**
 
 ```{python, results='asis'}
 from funciones import encontrar
@@ -84,7 +73,6 @@ encontrar(
     _variables = ['alpha', 'beta']
 )
 ```
-
 
 ### Comprobando
 
@@ -104,8 +92,7 @@ comprobar2a4(
 
 ## Pregunta 4
 
-**\mbox{\boldmath Encontrar el valor de $\alpha$ para que al dividir 
-$2x^3-2x^2-\alpha x+4$ entre $x-2$ dé resto 2, $\forall x$.}**
+**Encontrar el valor de** $\alpha$ **para que al dividir** $2x^3-2x^2-\alpha x+4$ **entre** $x-2$ **dé resto 2,** $\forall x$**.**
 
 ```{python, results='asis'}
 from funciones import encontrar
@@ -116,7 +103,6 @@ encontrar(
     _variables = ['alpha']
 )
 ```
-
 
 ### Comprobando
 
@@ -132,13 +118,11 @@ comprobar2a4(
     
 ```
 
-
 \newpage
 
 ## Pregunta 5
 
-**\mbox{\boldmath Determinar el valor de $\alpha$ para que 
-$2 x^3 - 2 x^2 - \alpha x + 4$ admita $x = 2$ como una de sus raíces.}**
+**Determinar el valor de** $\alpha$ **para que** $2 x^3 - 2 x^2 - \alpha x + 4$ **admita** $x = 2$ **como una de sus raíces.**
 
 ```{python, results='asis'}
 
@@ -164,15 +148,11 @@ for i in solve(p.subs([(x, 2)]), alpha):
 
 **Dados los polinomios**
 
-\begin{gather*}
-\mbox{\boldmath  $p(x) = x^4-6x+1$ \qquad $q(x) = 3x^3-5x$ \qquad $r(x) = x^4-x^2+2$  }
-\end{gather*}
+$p(x) = x^4-6x+1 \qquad q(x) = 3x^3-5x \qquad r(x) = x^4-x^2+2$
 
-**Realizar las siguientes operaciones y en cada uno de los polinomios 
-resultantes, evaluar en \mbox{\boldmath $0$, $-2$ y $2$ }.**
+**Realizar las siguientes operaciones y en cada uno de los polinomios resultantes, evaluar en** $0$**,** $-2$ **y** $2$ **.**
 
-- \mbox{\boldmath $p(x)+3q(x)+r(x)$ }
-
+-   $p(x)+3q(x)+r(x)$
 
 ```{python, results='asis'}
 from funciones import punto6
@@ -186,9 +166,7 @@ punto6(
   )
 ```
 
-
-- \mbox{\boldmath $p(x)-[q(x)+5r(x)]$ }
-
+-   $p(x)-[q(x)+5r(x)]$
 
 ```{python, results='asis'}
 from funciones import punto6
@@ -202,10 +180,9 @@ punto6(
   )
 ```
 
-
 \newpage
 
-- \mbox{\boldmath $p(x)+q(x) \cdot r(x)$ }
+-   $p(x)+q(x) \cdot r(x)$
 
 ```{python, results='asis'}
 from funciones import punto6
@@ -219,8 +196,7 @@ punto6(
   )
 ```
 
-
-- \mbox{\boldmath $[4p(x)+q(x)] \cdot r(x)$ }
+-   $[4p(x)+q(x)] \cdot r(x)$
 
 ```{python, results='asis'}
 from funciones import punto6
@@ -236,7 +212,7 @@ punto6(
 
 \newpage
 
-- \mbox{\boldmath $\frac{p(x)}{q(x)}-r(x)$ }
+-   $\frac{p(x)}{q(x)}-r(x)$
 
 ```{python, results='asis'}
 from funciones import punto6
@@ -250,9 +226,7 @@ punto6(
   )
 ```
 
-
-- \mbox{\boldmath $\frac{p(x)}{r(x)} \cdot 2q(x)$ }
-
+-   $\frac{p(x)}{r(x)} \cdot 2q(x)$
 
 ```{python, results='asis'}
 from funciones import punto6
@@ -270,12 +244,9 @@ punto6(
 
 ## Pregunta 7
 
-**Dividir los polinomios, en cada uno de los polinomios resultantes (división, 
-divisor, dividendo y modulo), evaluar en \mbox{\boldmath $1$, $2$ y $3$ } **
+**Dividir los polinomios, en cada uno de los polinomios resultantes (división, divisor, dividendo y modulo), evaluar en** $1$**,** $2$ **y** $3$**.**
 
-
-- \mbox{\boldmath $x^7-x^5+x^2-3$ entre $x^4+x^3+x^2+x$ }
-
+-   $x^7-x^5+x^2-3$ entre $x^4+x^3+x^2+x$
 
 ```{python, results='asis'}
 from funciones import punto7
@@ -287,8 +258,7 @@ punto7(
   )
 ```
 
-- \mbox{\boldmath $x^8+x^7-3x^6+x^5+2x^4+-3x^3+x^2-x-10$ entre 
-  $x^4+x^3-x^2+x+1$ }
+-   $x^8+x^7-3x^6+x^5+2x^4+-3x^3+x^2-x-10$ entre $x^4+x^3-x^2+x+1$
 
 ```{python, results='asis'}
 from funciones import punto7
@@ -302,7 +272,7 @@ punto7(
 
 \newpage
 
-- \mbox{\boldmath $x^6-x^5+x^4-x^3+x^2-x+1$ entre $x+1$ }
+-   $x^6-x^5+x^4-x^3+x^2-x+1$ entre $x+1$
 
 ```{python, results='asis'}
 from funciones import punto7

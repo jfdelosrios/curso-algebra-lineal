@@ -140,6 +140,13 @@ z = 2 + 2j
 print(cmath.phase(z))
 ```
 
+```{python, results='asis'}
+from sympy.printing import latex
+from sympy import re, im, arg, I, conjugate
+
+print("$" + latex(arg(2 + 2*I)) + "$")
+```
+
 ### Resolución en lenguaje `Octave`.
 
 ```{octave}
@@ -169,6 +176,17 @@ import math
 z = (math.sqrt(3) + 1j) ** 6
 
 print(cmath.phase(z))
+```
+
+```{python, results='asis'}
+from sympy.printing import latex
+from sympy import re, im, arg, I, conjugate, sqrt
+
+z = (sqrt(3) + 1*I) ** 6
+z = arg(z)
+
+print("$" + latex(z) + "$")
+
 ```
 
 ### Resolución en lenguaje `Octave`.

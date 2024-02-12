@@ -29,7 +29,7 @@ def encontrar(_dividendo:str, _divisor:str, _variables:list) -> None:
 
     resultado = solve_undetermined_coeffs(
             Eq(div(dividendo, divisor)[1], k * divisor), 
-            [variables + [k]], 
+            variables + [k], 
             x
         )
 
