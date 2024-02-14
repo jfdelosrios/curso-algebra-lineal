@@ -3,6 +3,9 @@ title: "Tarea"
 subtitle: "Producto de matrices triangulares"
 author: "Curso Álgebra Linea"
 output: pdf_document
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ```{r setup, include=FALSE}
@@ -25,8 +28,8 @@ a_{51} & a_{52} & a_{53} & a_{54} & a_{55}
 \end{pmatrix}
 $$
 
-
-Los elementos de la diagonal principal son los que se encuentran marcados en negrita
+Los elementos de la diagonal principal son los que se encuentran
+marcados en negrita
 
 $$
 A = \begin{pmatrix}
@@ -38,7 +41,8 @@ a_{51} & a_{52} & a_{53} & a_{54} & \boldsymbol{a_{55}}
 \end{pmatrix}
 $$
 
-Los elementos estrictamente superiores de una matriz son los que se encuentran por encima de la diagonal principal
+Los elementos estrictamente superiores de una matriz son los que se
+encuentran por encima de la diagonal principal
 
 $$
 = \begin{pmatrix}
@@ -64,39 +68,47 @@ a_{11} & a_{12} & a_{13} & a_{14} & a_{15} \\
 }
 $$
 
-
 ## Pregunta 2
 
-Dados los siguientes elementos de la matriz $A \in M5(\mathbb{K})$, di cuáles se encuentran en la diagonal principal,
-cuáles por encima y cuales por debajo:
+Dados los siguientes elementos de la matriz $A \in M5(\mathbb{K})$, di
+cuáles se encuentran en la diagonal principal, cuáles por encima y
+cuales por debajo:
 
 $$a_{11}, a_{23}, a_{15}, a_{21}, a_{32}, a_{44}, a_{53}$$
 
-\textcolor{gray}{Se encuentran por encima de la diagonal principal:} $\color{gray}{\{a_{23}, a_{15}\}}$
+\textcolor{gray}{Se encuentran por encima de la diagonal principal:}
+$\color{gray}{\{a_{23}, a_{15}\}}$
 
-\textcolor{gray}{Se encuentran en de la diagonal principal:} $\color{gray}{\{a_{11}, a_{44}\}}$
+\textcolor{gray}{Se encuentran en de la diagonal principal:}
+$\color{gray}{\{a_{11}, a_{44}\}}$
 
-\textcolor{gray}{Se encuentran por debajo de la diagonal principal:} $\color{gray}{\{a_{21}, a_{32}, a_{53}\}}$
-
+\textcolor{gray}{Se encuentran por debajo de la diagonal principal:}
+$\color{gray}{\{a_{21}, a_{32}, a_{53}\}}$
 
 ## Pregunta 3
 
 Dada $A \in \mathcal{M}_n(\mathbb{K})$ relaciona correctamente:
 
-* $A_{i,j}: i < j$ \textcolor{gray}{está por encima de la diagonal principal}
+-   $A_{i,j}: i < j$
+    \textcolor{gray}{está por encima de la diagonal principal}
 
-* $A_{i,j}: i = j$ \textcolor{gray}{está en la diagonal principal}
+-   $A_{i,j}: i = j$ \textcolor{gray}{está en la diagonal principal}
 
-* $A_{i,j}: i > j$ \textcolor{gray}{está por debajo de la diagonal principal}
+-   $A_{i,j}: i > j$
+    \textcolor{gray}{está por debajo de la diagonal principal}
 
-Con lo cual definiremos las entradas de la matriz en la diagonal principal, por encima de la diagonal principal y por debajo de la diagonal principal, respectivamente como:
+Con lo cual definiremos las entradas de la matriz en la diagonal
+principal, por encima de la diagonal principal y por debajo de la
+diagonal principal, respectivamente como:
 
-* $A_{ij}$ está en la diagonal principal $\Leftrightarrow i$ $\color{gray}{=}$ $j$
+-   $A_{ij}$ está en la diagonal principal $\Leftrightarrow i$
+    $\color{gray}{=}$ $j$
 
-* $A_{ij}$ está por encima de la diagonal principal $\Leftrightarrow i$ $\color{gray} >$ $j$
+-   $A_{ij}$ está por encima de la diagonal principal
+    $\Leftrightarrow i$ $\color{gray} <$ $j$
 
-* $A_{ij}$ está por debajo de la diagonal principal $\Leftrightarrow i$ $\color{gray}{<}$ $j$
-
+-   $A_{ij}$ está por debajo de la diagonal principal
+    $\Leftrightarrow i$ $\color{gray}{>}$ $j$
 
 # Definiendo los conjuntos de matrices triangulares superiores \break e inferiores
 
@@ -104,10 +116,13 @@ Con lo cual definiremos las entradas de la matriz en la diagonal principal, por 
 
 Definimos el conjunto de las matrices diagonales como:
 
+```{=tex}
 \begin{center}$\{A \in \mathcal{M}_n(\mathbb{K}) : \forall i, j \in \{1, ... , n\}$, si $i \neq j$, entonces $A_{ij} = 0\}$\end{center}
+```
+Define formalmente los conjuntos de matrices triangulares inferiores
+$(L_n(\mathbb{K}))$ y superiores $(U_n(\mathbb{K}))$
 
-Define formalmente los conjuntos de matrices triangulares inferiores $(L_n(\mathbb{K}))$ y superiores $(U_n(\mathbb{K}))$
-
+```{=tex}
 \begin{center}
 
 $L_n(\mathbb{K}) := \{A \in \mathcal{M}_n(\mathbb{K}) : \forall i, j \in \{1, ... , n\}$, si $i$ $\color{gray} >$ $j$, entonces $A_{ij} = 0\}$
@@ -115,16 +130,18 @@ $L_n(\mathbb{K}) := \{A \in \mathcal{M}_n(\mathbb{K}) : \forall i, j \in \{1, ..
 $U_n(\mathbb{K}) :=$ $\color{gray} \{A \in \mathcal{M}_n(\mathbb{K}) : \forall i, j \in \{1, ... , n\}$\textcolor{gray}{, si }$\color{gray} i < j$\textcolor{gray}{, entonces }$\color{gray} A_{ij} = 0\}$
 
 \end{center}
-
-
+```
 ## Pregunta 5
 
-Busquemos la relación entre las matrices triangulares superiores e inferiores.
+Busquemos la relación entre las matrices triangulares superiores e
+inferiores.
 
-Recordemos que $A^t$ es la matriz transpuesta de $A$. Con lo cual, podemos afirmar que
+Recordemos que $A^t$ es la matriz transpuesta de $A$. Con lo cual,
+podemos afirmar que
 
+```{=tex}
 \begin{center}$A \in U_n(\mathbb{K}) \Leftrightarrow A^t \in $ $\color{gray} L_n(\mathbb{K})$\end{center}
-
+```
 # Producto de matrices triangulares superiores
 
 ## Pregunta 6
@@ -146,9 +163,7 @@ b_{11} & b_{12} & b_{13} \\
 \end{pmatrix}
 $$
 
-
 Calcula el producto AB (llena todas las entradas)
-
 
 $$
 AB =
@@ -158,15 +173,14 @@ a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31} &
 \color{gray}{a_{11}b_{13} + a_{12}b_{23} + a_{13}b_{33}}
 \\
 \color{gray}{a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31}} & 
-a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32} & 
+\color{gray}{a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32}} & 
 \color{gray}{a_{21}b_{13} + a_{22}b_{23} + a_{23}b_{33}}
 \\
 \color{gray}{a_{31}b_{11} + a_{32}b_{21} + a_{33}b_{31}} & 
 \color{gray}{a_{31}b_{12} + a_{32}b_{22} + a_{33}b_{32}} & 
-\color{gray}{a_{31}b_{13} + a_{32}b_{23} + a_{33}b_{33}}
+a_{31}b_{13} + a_{32}b_{23} + a_{33}b_{33}
 \end{pmatrix}
 $$
-
 
 Ahora, observa que hay algunas que valen 0:
 
@@ -206,20 +220,22 @@ a_{11}b_{11} &
 \end{pmatrix}
 $$
 
-
 ## Pregunta 7
 
-Basándote en lo que has obtenido anteriormente, completa las siguientes afirmaciones:
+Basándote en lo que has obtenido anteriormente, completa las siguientes
+afirmaciones:
 
-* Las entradas por debajo de la diagonal principal son $\color{gray}{0}$.
+-   Las entradas por debajo de la diagonal principal son
+    $\color{gray}{0}$.
 
-* La matriz $AB \in$ $\color{gray}{U_3(\mathbb{K})}$.
+-   La matriz $AB \in$ $\color{gray}{U_3(\mathbb{K})}$.
 
-* El elemento ($i$, $i$)-ésimo de la diagonal principal es $\color{gray}{a_{ii}b_{ii}}$.
+-   El elemento ($i$, $i$)-ésimo de la diagonal principal es
+    $\color{gray}{a_{ii}b_{ii}}$.
 
 \newpage
 
-# Calculando las entradas del producto  \break por debajo de la diagonal principal,  \break en la diagonal principal y por encima de la diagonal principal
+# Calculando las entradas del producto \break por debajo de la diagonal principal, \break en la diagonal principal y por encima de la diagonal principal
 
 ## Pregunta 8
 
@@ -250,8 +266,10 @@ b_{11} & b_{12} & b_{13} & b_{14} & b_{15} & b_{16} & b_{17} & b_{18} \\
 \end{pmatrix}
 $$
 
-Para calcular la entrada $AB_{42}$ del producto $AB$, por definición del producto de matrices, la entrada de la matriz $AB$ en la cuarta fila y la segunda columna, es el producto de la cuarta fila de $A$ por la segunda columna de $B$, que es
-
+Para calcular la entrada $AB_{42}$ del producto $AB$, por definición del
+producto de matrices, la entrada de la matriz $AB$ en la cuarta fila y
+la segunda columna, es el producto de la cuarta fila de $A$ por la
+segunda columna de $B$, que es
 
 $$
 AB_{42} = \sum_{i=1}^{8} a_{4i}b_{i2} 
@@ -264,14 +282,15 @@ $$
 AB_{42} = 0 \cdot b_{12} + 0 \cdot b_{22} + 0 + a_{44} \cdot 0 + a_{45} \cdot 0 + a_{46} \cdot 0 + a_{47} \cdot 0 + a_{48} \cdot 0 = 0
 $$
 
-Siguiendo el ejemplo, calcula las siguientes entradas primero escribiendo todos los sumandos, a continuación
-indicando los factores nulos y finalmente, simplificando las sumas
+Siguiendo el ejemplo, calcula las siguientes entradas primero
+escribiendo todos los sumandos, a continuación indicando los factores
+nulos y finalmente, simplificando las sumas
 
 Entradas por debajo de la diagonal principal:
 
+-   $AB_{75}=$
 
-* $AB_{75}=$ 
-
+```{=tex}
 \begin{center}
 
 ${\color{gray}=\displaystyle\sum_{i=1}^{8} a_{7i}b_{i5} =}$
@@ -283,9 +302,10 @@ $\color{gray}= 0 \cdot b_{15} + 0 \cdot b_{25} + 0 \cdot b_{35} + 0 \cdot b_{45}
 $\color{gray}{= 0 }$
 
 \end{center}
+```
+-   $AB_{61}=$
 
-* $AB_{61}=$
-
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=1}^{8} a_{6i}b_{i1} =}$
@@ -297,9 +317,10 @@ $\color{gray}{= 0 \cdot b_{11} + 0 \cdot 0 + 0 \cdot 0 + 0 \cdot 0 + 0 \cdot 0 +
 $\color{gray}{= 0 }$
 
 \end{center}
+```
+-   $AB_{32} =$
 
-* $AB_{32} =$
-
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=1}^{8} a_{3i}b_{i2} =}$
@@ -311,9 +332,10 @@ $\color{gray}{= 0 \cdot b_{12} + 0 \cdot b_{22} + a_{33} \cdot 0 + a_{34} \cdot 
 $\color{gray}{= 0 }$
 
 \end{center}
+```
+-   $AB_{74} =$
 
-* $AB_{74} =$
-
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=1}^{8} a_{7i}b_{i4} =}$
@@ -325,9 +347,10 @@ $\color{gray}{= 0 \cdot b_{14} + 0 \cdot b_{24} + 0 \cdot b_{34} + 0 \cdot b_{44
 $\color{gray}{= 0 }$
 
 \end{center}
+```
+-   $AB_{87} =$
 
-* $AB_{87} =$
-
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=1}^{8} a_{8i}b_{i7} =}$
@@ -339,11 +362,12 @@ $\color{gray}{= 0 \cdot b_{17} + 0 \cdot b_{27} + 0 \cdot b_{37} + 0 \cdot b_{47
 $\color{gray}{= 0 }$
 
 \end{center}
-
+```
 Entradas de la diagonal principal:
 
-* $AB_{77}=$
+-   $AB_{77}=$
 
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=1}^{7} a_{7i}b_{i7} =}$
@@ -355,9 +379,10 @@ $\color{gray}{= 0 \cdot b_{17} + 0 \cdot b_{27} + 0 \cdot b_{37} + 0 \cdot b_{47
 $\color{gray}{= a_{77}b_{77}}$
 
 \end{center}
+```
+-   $AB_{11}=$
 
-* $AB_{11}=$
-
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=1}^{1} a_{1i}b_{i1} =}$
@@ -369,9 +394,10 @@ $\color{gray}{= a_{11}b_{11} + a_{12} \cdot 0 + a_{13} \cdot 0 + a_{14} \cdot 0 
 $\color{gray}{= a_{11}b_{11}}$
 
 \end{center}
+```
+-   $AB_{33}=$
 
-* $AB_{33}=$
-
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=3}^{3} a_{3i}b_{i3} =}$
@@ -383,10 +409,10 @@ $\color{gray}{= 0 \cdot b_{13} + 0 \cdot b_{23} + a_{33}b_{33} + a_{34} \cdot 0 
 $\color{gray}{= a_{33}b_{33}}$
 
 \end{center}
+```
+-   $AB_{44}=$
 
-
-* $AB_{44}=$
-
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=4}^{4} a_{4i}b_{i4} =}$
@@ -398,9 +424,10 @@ $\color{gray}{= 0 \cdot b_{14} + 0 \cdot b_{24} + 0 \cdot b_{34} + a_{44}b_{44} 
 $\color{gray}{= a_{44}b_{44}}$
 
 \end{center}
+```
+-   $AB_{88}=$
 
-* $AB_{88}=$
-
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=8}^{8} a_{8i}b_{i8} =}$
@@ -412,11 +439,12 @@ $\color{gray}{= 0 \cdot b_{18} + 0 \cdot b_{28} + 0 \cdot b_{38} + 0 \cdot b_{48
 $\color{gray}{= a_{88}b_{88}}$
 
 \end{center}
-
+```
 Entradas por encima de la diagonal principal:
 
-* $AB_{78}=$
+-   $AB_{78}=$
 
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=1}^{8} a_{7i}b_{i8} =}$
@@ -428,9 +456,10 @@ $\color{gray}{= 0 \cdot b_{18} + 0 \cdot b_{28} + 0 \cdot b_{38} + 0 \cdot b_{48
 $\color{gray}{= a_{77}b_{78} + a_{78}b_{88}}$
 
 \end{center}
+```
+-   $AB_{15}=$
 
-* $AB_{15}=$
-
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=1}^{5} a_{1i}b_{i5} =}$
@@ -442,9 +471,10 @@ $\color{gray}{= a_{11}b_{15} + a_{12}b_{25} + a_{13}b_{35} + a_{14}b_{45} + a_{1
 $\color{gray}{= a_{11}b_{15} + a_{12}b_{25} + a_{13}b_{35} + a_{14}b_{45} + a_{15}b_{55}}$
 
 \end{center}
+```
+-   $AB_{36}=$
 
-* $AB_{36}=$
-
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=1}^{8} a_{3i}b_{i6} =}$
@@ -456,9 +486,10 @@ $\color{gray}{= 0 \cdot b_{16} + 0 \cdot b_{26} + a_{33}b_{36} + a_{34}b_{46} + 
 $\color{gray}{= a_{33}b_{36} + a_{34}b_{46} + a_{35}b_{56} + a_{36}b_{66}}$
 
 \end{center}
+```
+-   $AB_{24}=$
 
-* $AB_{24}=$
-
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=1}^{8} a_{2i}b_{i4} =}$
@@ -470,9 +501,10 @@ $\color{gray}{= 0 \cdot b_{14} + a_{22}b_{24} + a_{23}b_{34} + a_{24}b_{44} + a_
 $\color{gray}{= a_{22}b_{24} + a_{23}b_{34} + a_{24}b_{44}}$
 
 \end{center}
+```
+-   $AB_{58}=$
 
-* $AB_{58}=$
-
+```{=tex}
 \begin{center}
 
 $\color{gray}{= \displaystyle\sum_{i=1}^{8} a_{5i}b_{i8} =}$
@@ -484,8 +516,7 @@ $\color{gray}{= 0 \cdot b_{18} + 0 \cdot b_{28} + 0 \cdot b_{38} + 0 \cdot b_{48
 $\color{gray}{= a_{55}b_{58} + a_{56}b_{68} + a_{57}b_{78} + a_{58}b_{88}}$
 
 \end{center}
-
-
+```
 # Deduciendo la fórmula general para las entradas del producto de matrices triangulares superiores
 
 ## Pregunta 9
@@ -532,7 +563,8 @@ $$
 
 ## Pregunta 10
 
-Ahora, vamos a hablar de particiones de una suma. Básicamente, se trata de dividir una suma en partes, cosa que a veces resulta más cómodo.
+Ahora, vamos a hablar de particiones de una suma. Básicamente, se trata
+de dividir una suma en partes, cosa que a veces resulta más cómodo.
 
 Por ejemplo,
 
@@ -579,7 +611,9 @@ $$
 s_k
 $$
 
-Supongamos ahora que sabemos el valor de los $s_k$, Por ejemplo, $s_k = 7$ \hspace{1mm}  $\forall k \in \{1, . . . , 6\}$ y $s_k = 5$ \hspace{1mm} $\forall k \in \{7, . . . , 20\}$. Entonces
+Supongamos ahora que sabemos el valor de los $s_k$, Por ejemplo,
+$s_k = 7$ \hspace{1mm} $\forall k \in \{1, . . . , 6\}$ y $s_k = 5$
+\hspace{1mm} $\forall k \in \{7, . . . , 20\}$. Entonces
 
 $$
 \sum_{k=1}^{20} s_k =
@@ -593,14 +627,16 @@ $$
 
 \newpage
 
-Siguiendo el ejemplo, completa las siguientes particiones y calcula su resultado:
+Siguiendo el ejemplo, completa las siguientes particiones y calcula su
+resultado:
 
-----------
+------------------------------------------------------------------------
 
 $$
 \sum_{k=1}^{17} s_k
 $$
 
+```{=tex}
 \begin{center}
 donde 
 
@@ -608,27 +644,27 @@ $s_k = 2$ $\forall k \in \{1, . . . , 10\}$,
 
 $ s_k = 3$ $\forall k \in \{11, . . . , 17\}$
 \end{center}
-
-
+```
 $$
 \sum_{k=1}^{17} s_k = 
-{
 \color{gray}
+{
 \sum_{k=1}^{10} s_k +
 \sum_{k=11}^{17} s_k =
 \sum_{k=1}^{10} 2 +
 \sum_{k=11}^{17} 3 =
 (10 - 1 + 1) \cdot 2 + (17 - 11 + 1) \cdot 3 =
-10 \cdot 7 + 7 \cdot 5 = 105
+10 \cdot 2 + 7 \cdot 3 = 41
 }
 $$
 
+------------------------------------------------------------------------
 
------
+$$\sum_{k=1}^{25} s_k$$
 
-$$\sum_{k=1}^{25} s_k$$ 
-
+```{=tex}
 \begin{center}
+
 donde: 
 
 $s_k = 7$ $\forall k \in \{1, . . . , 12\}$,
@@ -636,13 +672,14 @@ $s_k = 7$ $\forall k \in \{1, . . . , 12\}$,
 $s_k = 9$ $\forall k \in \{13, . . . , 19\}$,
 
 $s_k = 5$ $\forall k \in \{20, . . . , 25\}$
-\end{center}
 
+\end{center}
+```
 
 $$
 \sum_{k=1}^{25} s_k = 
-{
 \color{gray}
+{
 \sum_{k=1}^{12} s_k +
 \sum_{k=13}^{19} s_k +
 \sum_{k=20}^{25} s_k =
@@ -652,21 +689,33 @@ $$
 }
 $$
 
-$$
+```{=tex}
+\begin{center}
 \color{gray}
-=
-(12 - 1 + 1) \cdot 7 + 
-(19 - 13 + 1) \cdot 9 + 
-(25 - 20 + 1) \cdot 5 
-=
-177
-$$
+{
 
-----
+$= (12 - 1 + 1) \cdot 7 + (19 - 13 + 1) \cdot 9 + (25 - 20 + 1) \cdot 5 =$
+
+$= 84 + 7 \cdot 9 + 6 \cdot 5=$
+
+$=84 + 63 + 30 =$
+
+$= 177$
+
+}
+\end{center}
+```
+
+------------------------------------------------------------------------
 
 Simplifica las sumas:
 
-$\displaystyle\sum_{k=1}^{31} s_k = \cdot \cdot \cdot$ donde $s_k = 0$ $\forall k \in \{1, . . . , 9\} \cup \{25, . . . , 31\}$
+```{=tex}
+\begin{center}
+$\displaystyle\sum_{k=1}^{31} s_k = \cdot \cdot \cdot$ donde $s_k = 0$
+$\forall k \in \{1, . . . , 9\} \cup \{25, . . . , 31\}$
+\end{center}
+```
 
 $$
 \color{gray}
@@ -678,7 +727,19 @@ $$
 
 \newpage
 
-$\displaystyle\sum_{k=1}^{27} s_k = \cdot \cdot \cdot$ donde $s_k = 0$ $\forall k \in \{1, . . . , 7\} \cup \{12, \cdot \cdot \cdot , 19\} \cup \{24, . . . , 27\}$
+```{=tex}
+\begin{center}
+$\displaystyle\sum_{k=1}^{27} s_k = \cdot \cdot \cdot$ \qquad 
+donde 
+$s_k = 0$ 
+$\forall k \in 
+\{1, . . . , 7\} 
+\cup 
+\{12, \cdot \cdot \cdot , 19\} 
+\cup 
+\{24, . . . , 27\}$
+\end{center}
+```
 
 $$
 \color{gray}
@@ -712,19 +773,21 @@ $$
 
 ## Pregunta 11
 
-En los ejemplos siguientes se considera el producto de dos matrices triangulares superiores $A, B \in U_{15}(\mathbb{R})$
+En los ejemplos siguientes se considera el producto de dos matrices
+triangulares superiores $A, B \in U_{15}(\mathbb{R})$
 
-Queremos demostrar que $AB_{13,5} = 0$. Por definición, nosotros sabemos que
+Queremos demostrar que $AB_{13,5} = 0$. Por definición, nosotros sabemos
+que
 
 $$AB_{13,5} = \sum_{k=1}^{15} a_{13,k}b_{k,5}$$
 
 Podemos dividir la suma en tres partes:
 
-* $k$ desde 1 hasta 5
+-   $k$ desde 1 hasta 5
 
-* $k$ desde 6 hasta 12
+-   $k$ desde 6 hasta 12
 
-* $k$ desde 13 hasta 15
+-   $k$ desde 13 hasta 15
 
 De este modo,
 
@@ -735,11 +798,17 @@ AB_{13,5} =
 \sum_{k=13}^{15} a_{13,k}b_{k5}
 $$
 
-El primer sumando cumple que $a_{13,k} = 0$ $\forall k \in \{1, . . . , 5\}$ ya que, $A \in U_{15}$, con lo cual $a_{i,j} = 0$ si, y solo si, $i > j$.
+El primer sumando cumple que $a_{13,k} = 0$
+$\forall k \in \{1, . . . , 5\}$ ya que, $A \in U_{15}$, con lo cual
+$a_{i,j} = 0$ si, y solo si, $i > j$.
 
-De forma similar, el segundo sumando cumple tanto que $a_{13,k} = 0$ $\forall k \in \{6, . . . , 12\}$ como que $b_{k,5} = 0$ $\forall k \in \{6, . . . , 12\}$ porque en ambos casos $i > j$.
+De forma similar, el segundo sumando cumple tanto que $a_{13,k} = 0$
+$\forall k \in \{6, . . . , 12\}$ como que $b_{k,5} = 0$
+$\forall k \in \{6, . . . , 12\}$ porque en ambos casos $i > j$.
 
-Finalmente, siguiendo el mismo argumento que en los dos casos anteriores, el tercer sumando cumple que $b_{k,5} = 0$ $\forall k \in \{13, 15\}$ ya que de nuevo se cumple que $i > j$.
+Finalmente, siguiendo el mismo argumento que en los dos casos
+anteriores, el tercer sumando cumple que $b_{k,5} = 0$
+$\forall k \in \{13, 15\}$ ya que de nuevo se cumple que $i > j$.
 
 \newpage
 
@@ -753,9 +822,10 @@ AB_{13,5} =
 = 0
 $$
 
-Como de costumbre, ahora es tu turno: demuestra que las siguientes entradas del producto AB son nulas
+Como de costumbre, ahora es tu turno: demuestra que las siguientes
+entradas del producto AB son nulas
 
-* $AB_{93} =$
+-   $AB_{93} =$
 
 $$
 \color{gray}
@@ -767,19 +837,21 @@ AB_{93}
 = 0
 $$
 
-* $AB_{31} =$
+-   $AB_{31} =$
 
 $$
 \color{gray}
+{
 AB_{31}
 =
 \sum_{k=1}^{1} (0 \cdot b_{k1}) +
-\sum_{k=1+1}^{1-1} (0 \cdot 0) + 
+\sum_{k=1+1}^{3-1} (0 \cdot 0) + 
 \sum_{k=3}^{15} (a_{3k} \cdot 0)
 = 0
+}
 $$
 
-* $AB_{15,3} =$
+-   $AB_{15,3} =$
 
 $$
 \color{gray}
@@ -795,9 +867,14 @@ $$
 
 ## Pregunta 12
 
-Seguimos en el caso particular $n = 15$, donde $A, B \in U_{15}(\mathbb{R})$ son matrices triangulares superiores de orden 15
+Seguimos en el caso particular $n = 15$, donde
+$A, B \in U_{15}(\mathbb{R})$ son matrices triangulares superiores de
+orden 15
 
-Siguiendo un razonamiento similar al del caso de las entradas por debajo de la diagonal principal, calculemos la entrada $AB_{77}$ por definición y utilizando partición de la suma. De nuevo, volvemos a requerir 3 sumandos:
+Siguiendo un razonamiento similar al del caso de las entradas por debajo
+de la diagonal principal, calculemos la entrada $AB_{77}$ por definición
+y utilizando partición de la suma. De nuevo, volvemos a requerir 3
+sumandos:
 
 $$
 AB_{77} =
@@ -807,10 +884,12 @@ AB_{77} =
 a_{7k}b_{k7}
 $$
 
-El primer sumando cumple que $a_{7,k} = 0$ $\forall k \in \{1, . . . , 6\}$ ya que recordemos, $A \in U_{15}$, con lo cual $a_{ij} = 0$ si, y solo si, $i > j$.
+El primer sumando cumple que $a_{7,k} = 0$
+$\forall k \in \{1, . . . , 6\}$ ya que recordemos, $A \in U_{15}$, con
+lo cual $a_{ij} = 0$ si, y solo si, $i > j$.
 
-De forma similar, siguiendo el mismo argumento, el tercer sumando cumple tanto que $b_{k7} = 0$  $\forall k \in \{8, . . . , 15\}$
-porque $i > j$.
+De forma similar, siguiendo el mismo argumento, el tercer sumando cumple
+tanto que $b_{k7} = 0$ $\forall k \in \{8, . . . , 15\}$ porque $i > j$.
 De este modo,
 
 $$
@@ -823,10 +902,12 @@ $$
 
 \newpage
 
-Calcula las siguientes entradas del producto siguiendo el razonamiento anterior:
+Calcula las siguientes entradas del producto siguiendo el razonamiento
+anterior:
 
-* $AB_{55} =$
+-   $AB_{55} =$
 
+```{=tex}
 \begin{center}
 \color{gray}
 
@@ -839,10 +920,10 @@ $= 0 + a_{55}b_{55} + 0 =$
 $= a_{55}b_{55}$
 
 \end{center}
+```
+-   $AB_{10,10} =$
 
-* $AB_{10,10} =$
-
-
+```{=tex}
 \begin{center}
 \color{gray}
 
@@ -855,9 +936,10 @@ $= 0 + a_{10,10}b_{10,10} + 0 =$
 $= a_{10,10}b_{10,10}$
 
 \end{center}
+```
+-   $AB_{15,15} =$
 
-* $AB_{15,15} =$
-
+```{=tex}
 \begin{center}
 \color{gray}
 
@@ -870,16 +952,19 @@ $= 0 + a_{15,15}b_{15,15} =$
 $= a_{15,15}b_{15,15}$
 
 \end{center}
-
+```
 \newpage
 
 # Entradas del producto por encima de la diagonal principal \break con partición de sumas
 
 ## Pregunta 13
 
-Seguimos en el caso particular $n = 15$, donde $A, B \in U_{15}(\mathbb{R})$ son matrices triangulares superiores de orden 15.
+Seguimos en el caso particular $n = 15$, donde
+$A, B \in U_{15}(\mathbb{R})$ son matrices triangulares superiores de
+orden 15.
 
-Para calcular la entrada $AB_{36}$ seguimos el razonamiento anterior, partimos la suma en 3 del siguiente modo:
+Para calcular la entrada $AB_{36}$ seguimos el razonamiento anterior,
+partimos la suma en 3 del siguiente modo:
 
 $$
 AB_{36} = \sum_{k=1}^{15} a_{3k}b_{k6} =
@@ -906,8 +991,7 @@ $$
 
 Calcula las siguientes entradas del producto $AB$
 
-* $AB_{1,5} =$
-
+-   $AB_{1,5} =$
 
 $$
 \color{gray}
@@ -933,8 +1017,7 @@ $$
 
 \newpage
 
-* $AB_{10,13} =$
-
+-   $AB_{10,13} =$
 
 $$
 \color{gray}
@@ -958,8 +1041,7 @@ $$
 \sum_{k=10}^{13} a_{10,k}b_{k,13}
 $$
 
-* $AB_{6,9} =$
-
+-   $AB_{6,9} =$
 
 $$
 \color{gray}
@@ -985,25 +1067,27 @@ $$
 
 # Demostración del caso general.
 
-El Teorema enuncia lo siguiente: *El producto de dos matrices triangulares superiores es una matriz triangular superior*.
+El Teorema enuncia lo siguiente: *El producto de dos matrices
+triangulares superiores es una matriz triangular superior*.
 
 ## Demostración.
 
-Sean $A, B \in U_n(\mathbb{K})$, la entrada ($i$, $j$)-ésima de la matriz $AB$ se da del siguiente modo:
+Sean $A, B \in U_n(\mathbb{K})$, la entrada ($i$, $j$)-ésima de la
+matriz $AB$ se da del siguiente modo:
 
 $$
 ab_{ij} =
 \sum_{k=1}^{n} a_{ik}b_{kj}
-$$
-donde $i$ y $j$ pertenecen a $\mathbb{N} - \{0\}$.
+$$ donde $i$ y $j$ pertenecen a $\mathbb{N} - \{0\}$.
 
-
-Para demostrar que $AB \in U_n(\mathbb{K})$, basta con demostrar que $ab_{ij} = 0$ cuando $i > j$. 
+Para demostrar que $AB \in U_n(\mathbb{K})$, basta con demostrar que
+$ab_{ij} = 0$ cuando $i > j$.
 
 \newpage
 
 Ahora, tenemos que
 
+```{=tex}
 \begin{center}
 
 $a_{ik} = 0$ cuando $i > k$
@@ -1011,7 +1095,7 @@ $a_{ik} = 0$ cuando $i > k$
 $b_{kj} = 0$ cuando $k > j$
 
 \end{center}
-
+```
 donde $k \in \mathbb{N} - \{0\}$
 
 De este modo,
@@ -1025,6 +1109,7 @@ $$
 
 Como $j < i$, entonces:
 
+```{=tex}
 \begin{itemize}
    \item Para $\displaystyle\sum_{k=1}^{j} a_{ik}b_{kj}$, se aprecia que $k \leq j$, por consiguiente, $k < i$, por ende $a_{ik} = 0$.
    \item Para $\displaystyle\sum_{k=j+1}^{i-1}$ se aprecia que: 
@@ -1034,9 +1119,8 @@ Como $j < i$, entonces:
    \end{itemize}
    \item Para $\displaystyle\sum_{k=i}^{n} a_{ik}b_{kj}$, se aprecia que $k \geq i$, por consiguiente, $k > k-1 \geq j$, por ende $b_{kj} = 0$.
 \end{itemize}
-
+```
 Por lo cual:
-
 
 $$
 ab_{ij} = 
@@ -1047,23 +1131,24 @@ $$
 
 $$
 = 0 + 0 + 0 = 0
-$$
-\newpage
+$$ \newpage
 
 ## Pregunta 14
 
-* Calcula la fórmula para las entradas $ab_{ii}$ de la diagonal principal.
+-   Calcula la fórmula para las entradas $ab_{ii}$ de la diagonal
+    principal.
 
+```{=tex}
 \begingroup
 \color{gray}
-
-Sean $A, B \in U_n(\mathbb{K})$, la entrada ($i$, $i$)-ésima de la matriz $AB$ se da del siguiente modo:
+```
+Sean $A, B \in U_n(\mathbb{K})$, la entrada ($i$, $i$)-ésima de la
+matriz $AB$ se da del siguiente modo:
 
 $$
 ab_{ij} =
 \sum_{k=1}^{n} a_{ik}b_{kj}
-$$
-donde $i \in \mathbb{N} - \{0\}$.
+$$ donde $i \in \mathbb{N} - \{0\}$.
 
 De este modo,
 
@@ -1076,8 +1161,9 @@ $$
 
 donde $k \in \mathbb{N} - \{0\}$
 
-Como $ab_{ij} = 0$  cuando $j < i$, Entonces:
+Como $ab_{ij} = 0$ cuando $j < i$, Entonces:
 
+```{=tex}
 \begin{itemize}
 
    \item Para $\displaystyle\sum_{k=1}^{i-1} a_{ik}b_{kj}$, se aprecia que $k \leq i - 1$, lo que es equivalente a decir que $k+1 \leq i$, por consiguiente, $k < i$, por ende $a_{ik} = 0$.
@@ -1086,7 +1172,7 @@ Como $ab_{ij} = 0$  cuando $j < i$, Entonces:
    \item Para $\displaystyle\sum_{k=i+1}^{n} a_{ik}b_{kj}$, se aprecia que $k \geq i + 1$, lo que es equivalente a decir que $k - 1 \geq i$, por consiguiente, $k > i$ por lo cual $k > j$, por ende $b_{kj} = 0$.
    
 \end{itemize}
-
+```
 Por lo cual:
 
 $$
@@ -1100,17 +1186,21 @@ $$
 = 0 + a_{ii}b_{ii} + 0 = a_{ii}b_{ii}
 $$
 
+```{=tex}
 \endgroup
-
+```
 \newpage
 
-* Calcula la fórmula para las entradas no triviales $ab_{ij}$ con $i \leq j$
+-   Calcula la fórmula para las entradas no triviales $ab_{ij}$ con
+    $i \leq j$
 
+```{=tex}
 \begingroup
-
+```
 \color{gray}
 
-Sean $A, B \in U_n(\mathbb{K})$, la entrada ($i$, $j$)-ésima de la matriz $AB$ se da del siguiente modo:
+Sean $A, B \in U_n(\mathbb{K})$, la entrada ($i$, $j$)-ésima de la
+matriz $AB$ se da del siguiente modo:
 
 $$
 ab_{ii} =
@@ -1120,8 +1210,6 @@ $$
 donde $i \in \mathbb{N} - \{0\}$.
 
 De este modo,
-
-
 
 $$
 AB_{ij} = \sum_{k=1}^{n} a_{ik}b_{kj} =
@@ -1133,12 +1221,11 @@ $$
 \sum_{k=j+1}^{n} a_{ik}b_{kj}
 $$
 
-
-
 donde $k \in \mathbb{N} - \{0\}$
 
-Como $ab_{ij} = 0$  cuando $j < i$, Entonces:
+Como $ab_{ij} = 0$ cuando $j < i$, Entonces:
 
+```{=tex}
 \begin{itemize}
 
    \item Para $\displaystyle\sum_{k=1}^{i-1} a_{ik}b_{kj}$, se aprecia que $k \leq i - 1$, lo que es equivalente a decir que $k+1 \leq i$, por consiguiente, $k < i$, por ende $a_{ik} = 0$.
@@ -1147,9 +1234,8 @@ Como $ab_{ij} = 0$  cuando $j < i$, Entonces:
    \item Para $\displaystyle\sum_{k=i+1}^{n} a_{ik}b_{kj}$, se aprecia que $k \geq i + 1$, lo que es equivalente a decir que $k - 1 \geq i$, por consiguiente, $k > i$ por lo cual $k > j$, por ende $b_{kj} = 0$.
    
 \end{itemize}
-
+```
 Por lo cual:
-
 
 $$
 AB_{ij}
@@ -1172,8 +1258,11 @@ $$
 \sum_{k=i}^{j} a_{ik}b_{kj}
 $$
 
+```{=tex}
 \endgroup
+```
+-   Enuncia y demuestra el resultado para matrices triangulares
+    inferiores. Calcula para este caso las fórmulas de las entradas
+    diagonales y las entradas no triviales.
 
-* Enuncia y demuestra el resultado para matrices triangulares inferiores. Calcula para este caso las fórmulas de las entradas diagonales y las entradas no triviales.
-
-* Enuncia y demuestra el resultado para matrices diagonales.
+-   Enuncia y demuestra el resultado para matrices diagonales.
